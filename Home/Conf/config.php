@@ -12,5 +12,6 @@ return array(
 	'DB_PORT'           => '3306',      //端口
 	'DB_PREFIX'         => 'WL_',       //表前缀
 	'SHOW_PAGE_TRACE'   =>  true,       //错误追踪
+	/*'DB_DSN'            =>  'mysql://root:wanglei@localhost:3306/wolf',*/       //使用DSN方式配置数据库信息
 );
 ?>
