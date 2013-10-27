@@ -12,8 +12,8 @@
 	<h1>hi!</h1>
 	<div class="top">
 		<ul class="action" >
-			<li><a href="?action=add">添加信息</a></li>
-			<li><a  href="?">我的信息</a></li>
+			<li><a href="__URL__/add">添加信息</a></li>
+			<li><a  href="__URL__">我的信息</a></li>
 		</ul>
 	</div>
 	<div class="top1">
@@ -47,8 +47,8 @@
 			<tr>
 				<th>{$t.username}</th>
 				<td>{$t.age}</td>
-				<td><a href="?action=edit&userid={$t.userid}">修改</a></td>
-				<td><a href="?action=delete&userid={$t.userid}" onclick="return confirm('你确定删除吗？')">删除</a></td>
+				<td><a href="__URL__/edit/userid/{$t.userid}">修改</a></td>
+				<td><a href="__URL__/del/userid/{$t.userid}" onclick="return confirm('你确定删除吗？')">删除</a></td>
 			</tr>
 			</volist>
 		</table>
