@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>{$head_title}</title>
+	</head>
+	<style type='text/css'>
+			body {width: 80%;margin: 0 auto}
+			.action li{float: left;margin-left: 10px}
+			.top{width:200px;height: 50px}
+			.top1{width:300px;}
+	</style>
+	<body bgColor="yellow">
+	<h1>hi!</h1>
+	<div class="top">
+		<ul class="action" >
+			<li><a href="__URL__/add">添加信息</a></li>
+			<li><a  href="__URL__">我的信息</a></li>
+		</ul>
+	</div>
+	<div class="top">
+		<form action="__URL__/search" method="post">
+			<input type="text" name="username" value="{$suser}">姓名
+			<input type="submit"  value="搜索">
+		</form>
+	</div>
+	<div class="top1">
+	<if  condition=" ($action eq 'add') or  ($action eq 'edit')">
+	<form action="?" method="post">
+		<input type="hidden" name='action' value="{$action}">
+		<input type="hidden" name='post[userid]' value="{$item[userid]}">
+			<table>
+				<tr>
+					<th>我的名字</th>
+					<td><input type="text" name="post[username]" value="{$item[username]}"></td>
+				</tr>
+				<tr>
+					<th>我的年龄</th>
+					<td><input type="text" name="post[age]"  value="{$item[age]}"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="提交" name="submit"></td>
+					<td><input type="reset" value="重置"></td>
+				</tr>
+			</table>
+	</form>
+	<else/>
+		<table>
+			<tr>
+				<th>名字</th>
+				<td>年龄</td>
+				<td>操作</td>
+			</tr>
+			<if condition="$arr">
+			<volist name='arr' id='t'>
+			<tr>
+				<th>{$t.username}</th>
+				<td>{$t.age}</td>
+				<td><a href="__URL__/edit/userid/{$t.userid}">修改</a></td>
+				<td><a href="__URL__/del/userid/{$t.userid}" onclick="return confirm('你确定删除吗？')">删除</a></td>
+			</tr>
+			</volist>
+			<else/>
+				<tr>
+					<th colspan="4">数据空</th>
+				</tr>
+			</if>
+		</table>
+	</if>
+	</div>
+	</body>
+</html>

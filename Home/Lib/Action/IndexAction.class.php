@@ -2,13 +2,13 @@
 
 class IndexAction extends Action {
 
-			private  $head_title;
+	private  $head_title;
 
-			private  $post;
+	private  $post;
 
-			private  $userid;
+	private  $userid;
 
-			private  $do;
+	private  $do;
 
 		function __construct(){
 			parent::__construct();
@@ -59,6 +59,16 @@ class IndexAction extends Action {
 		if($this->userid){
 			$this->do->delete($this->userid);
 			header('Location:'.__URL__);
+		}
+	}
+
+	public function  search(){
+		if($_POST){
+			$_POST['username'] ? $sel['username'] = array("like","%".$_POST['username']."%") : $sel='';
+			$arr =$this->do->where($sel)->select();
+			$this->assign('arr',$arr);
+			$this->assign('suser',$_POST['username']);
+			$this->display('index');
 		}
 	}
 

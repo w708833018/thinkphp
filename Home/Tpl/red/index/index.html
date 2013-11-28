@@ -8,13 +8,19 @@
 			.top{width:200px;height: 50px}
 			.top1{width:300px;}
 	</style>
-	<body>
+	<body bgColor="red">
 	<h1>hi!</h1>
 	<div class="top">
 		<ul class="action" >
 			<li><a href="__URL__/add">添加信息</a></li>
 			<li><a  href="__URL__">我的信息</a></li>
 		</ul>
+	</div>
+	<div class="top">
+		<form action="__URL__/search" method="post">
+			<input type="text" name="username" value="{$suser}">姓名
+			<input type="submit"  value="搜索">
+		</form>
 	</div>
 	<div class="top1">
 	<if  condition=" ($action eq 'add') or  ($action eq 'edit')">
@@ -43,6 +49,7 @@
 				<td>年龄</td>
 				<td>操作</td>
 			</tr>
+			<if condition="$arr">
 			<volist name='arr' id='t'>
 			<tr>
 				<th>{$t.username}</th>
@@ -51,6 +58,11 @@
 				<td><a href="__URL__/del/userid/{$t.userid}" onclick="return confirm('你确定删除吗？')">删除</a></td>
 			</tr>
 			</volist>
+			<else/>
+				<tr>
+					<th colspan="4">数据空</th>
+				</tr>
+			</if>
 		</table>
 	</if>
 	</div>
