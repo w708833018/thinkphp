@@ -14,9 +14,13 @@ return array(
 	'SHOW_PAGE_TRACE'        =>  true,       //错误追踪
 	'TMPL_TEMPLATE_SUFFIX'   =>  '.html',    //模板后缀
 	//'TMPL_FILE_DEPR'         =>  '_',      //模板层次
-	'DEFAULT_THEME'          =>  'def',   //默认模板主题
-    'TMPL_DETECT_THEME'      =>   true,       //自动侦测模板主题
-	'THEME_LIST'             =>  'yellow,red,def',        //自动侦测模板主题
+    //DEFAULT_THEME'          =>  'index',   //默认模板主题
+    //'TMPL_DETECT_THEME'      =>   true,       //自动侦测模板主题
+	//'THEME_LIST'             =>  'yellow,red,index',        //自动侦测模板主题
 	/*'DB_DSN'            =>  'mysql://root:wanglei@localhost:3306/wolf',*/       //使用DSN方式配置数据库信息
+	'TMPL_PARSE_STRING' =>  array(
+			'__CSS__' => __ROOT__.'/Public/static/css',
+			'__JS__'    => __ROOT__. '/Public/static/js',
+	),
 );
 ?>

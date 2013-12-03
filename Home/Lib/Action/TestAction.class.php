@@ -1,14 +1,7 @@
 <?php
 
-class IndexAction extends Action {
+class TestAction extends Action {
 
-	private  $head_title;
-
-	private  $post;
-
-	private  $userid;
-
-	private  $do;
 
 		function __construct(){
 			parent::__construct();
@@ -21,10 +14,8 @@ class IndexAction extends Action {
 
 
     public function index(){
-	    $do = M('Member');//实例化模型的简单方式
-		 $arr = $do->select();
-		$this->assign('arr',$arr);
-	    $this->display();
+		$content = $this->fetch('public:error');
+	      $this->show($content);
     }
 
 	public function edit(){
