@@ -1,0 +1,50 @@
+
+.top {
+	width: 960px;
+	margin: 0 auto;
+	background: #efefef;
+	text-align: center;
+
+}
+
+.login {
+	width: 395px;
+	height: 155px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+h1{
+	color: #444;
+	font-weight: bold;
+}
+.dataform{
+	font-size: 12px;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+}
+.data-form input{
+	height: 20px;
+	padding: 0;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.data-form th {
+	font-size: 12px;
+	text-align: right;
+	color: #666;
+	padding: 10px 5px;
+}
+
+.data-form  .btn{
+	height: 20px;
+	padding: 0 10px;
+	background: #06529a;
+	border-radius: 3px;
+	border: none;
+	line-height: 20px;
+	color: white;
+	cursor: pointer;
+}
