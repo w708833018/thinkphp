@@ -4,8 +4,8 @@ var alias={
 	'login' : "JS/login",
 	'jquery': "JS/libs/jquery/jquery",
 	'$': "JS/libs/jquery/jquery",
-	'easyui':'jquery.easyui.min'
-	'easyui-css':'jquery.easyui.min'
+	'easyui':'JS/libs/easyui/jquery.easyui.min',
+	'easyui-css':'JS/libs/easyui/themes/metro/easyui.css'
 };
 
 for (var a in alias) {

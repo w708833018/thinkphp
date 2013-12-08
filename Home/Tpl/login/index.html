@@ -4,11 +4,15 @@
 			<h1>登录</h1>
 		</div>
 		<div class="login">
-			<form action="__URL__/pass" method="post">
+			<form action="__URL__/pass" method="post" id="pub-form">
 				<table class="data-form">
 					<tr>
 						<th width="90">用户名：</th>
-						<td width="120"><input type="text" size="20" name="post[username]" id="username"></td>
+						<td width="120">
+							<input type="text" size="20" name="post[username]" id="username"
+						                       class="graybd-ipt easyui-validatebox"
+						                       data-options="required:true,validType:'length[1,50]',missingMessage:'请填写用户名'"
+								></td>
 					</tr>
 					<tr>
 						<th>密　码：</th>
@@ -30,7 +34,7 @@
 		</body>
 </html>
 <script>
-	seajs.use('',function(){
-		$('#username').hide();
+	seajs.use(['easyui','easyui-css'],function(easy){
+		 $('#pub-form').form('validate');
 	})
 </script>

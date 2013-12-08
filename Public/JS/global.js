@@ -1,4 +1,4 @@
 var test = test || {};
 test.domain={
-	'js':'http://www.think.net/Public/'
+	'js':'http://www.thinkphp.net/Public/'
 };
