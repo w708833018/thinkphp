@@ -19,8 +19,8 @@ return array(
 	//'THEME_LIST'             =>  'yellow,red,index',        //自动侦测模板主题
 	/*'DB_DSN'            =>  'mysql://root:wanglei@localhost:3306/wolf',*/       //使用DSN方式配置数据库信息
 	'TMPL_PARSE_STRING' =>  array(
-			'__CSS__' => __ROOT__.'/Public/static/css',
-			'__JS__'    => __ROOT__. '/Public/static/js',
+			'__CSS__' => __ROOT__.'/Public/CSS',
+			'__JS__'    => __ROOT__. '/Public/JS',
 	),
 );
 ?>
