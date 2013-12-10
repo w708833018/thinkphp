@@ -1,5 +1,5 @@
 
-test.seajsBase = test.domain.js;
+test.seajsBase = test.domain.public;
 var alias={
 	'login' : "JS/login",
 	'jquery': "JS/libs/jquery/jquery",
