@@ -22,5 +22,6 @@ return array(
 			'__CSS__' => __ROOT__.'/Public/CSS',
 			'__JS__'    => __ROOT__. '/Public/JS',
 	),
+	'URL_MODEL'                => 2,
 );
 ?>
