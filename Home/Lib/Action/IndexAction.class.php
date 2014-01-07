@@ -27,6 +27,13 @@ class IndexAction extends Action {
 	    $this->display();
     }
 
+	public function tpl(){
+		$do = M('Member');
+		$sex = '男';
+		$this->assign('sex',$sex);
+		$this->display();
+	}
+
 	public function edit(){
 		if($this->userid){
 			$item = $this->do->find($this->userid);
