@@ -1,6 +1,6 @@
 <?php
 
-class LoginAction extends Action {
+class LoginAction extends HomeAction {
 
 
 		function __construct(){

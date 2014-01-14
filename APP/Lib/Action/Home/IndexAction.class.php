@@ -1,6 +1,6 @@
 <?php
 
-class IndexAction extends Action {
+class IndexAction extends HomeAction {
 
 	private  $head_title;
 
@@ -14,7 +14,7 @@ class IndexAction extends Action {
 			parent::__construct();
 			$this->do       = M('Member');
 			$this->post    = $_POST['post'] ;
-			$this->head_title    = '测试' ;
+			$this->head_title    = '网站' ;
 			$this->userid = $_GET['userid'];
 			$this->assign('head_title',$this->head_title);
 		}
