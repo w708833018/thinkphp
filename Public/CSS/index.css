@@ -1,5 +1,48 @@
-/* 两列右侧自适应布局 */
-.g-bd1{margin:0 0 10px;}
-.g-sd1{position:relative;float:left;width:190px;margin-right:-190px;}
-.g-mn1{float:right;width:100%;}
-.g-mn1c{margin-left:200px;}
+/*header*/
+.g-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 49px;
+  background: #252525;
+  color: #FFFFFF;
+}
+.g-top .g-top-nav {
+  height: 49px;
+  float: right;
+  margin-right: 20px;
+}
+.g-top .g-top-nav .current {
+  font-weight: bold;
+  color: #ffffff;
+  background: #0f0f0f;
+}
+.g-top .g-top-nav a {
+  display: block;
+  width: 90px;
+  height: 48px;
+  text-align: center;
+  float: left;
+  font: 18px/48px "Microsoft YaHei", "Microsoft JhengHei", "黑体";
+  color: #D8D8D8;
+}
+.g-top .g-top-nav .separate {
+  width: 2px;
+  height: 48px;
+  background: #2A2B2D;
+  margin: 0;
+  display: block;
+  float: left;
+}
+.g-middle {
+  width: 100%;
+}
+.g-left {
+  position: fixed;
+  top: 49px;
+  left: 0;
+  width: 140px;
+  height: 100%;
+  background: #2A2B2D;
+}
