@@ -56,6 +56,8 @@ a,a:hover{color:#333;}
 .f-lh24{line-height:24px;}
 .f-lh30{line-height:30px;}
 .f-mt10{margin-top:10px;}
+.f-mr10{margin-right:10px;}
+.f-mr20{margin-right:20px;}
 .f-tdu,.f-tdu:hover{text-decoration:underline;}
 .f-tdn,.f-tdn:hover{text-decoration:none;}
 .f-toe{overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}

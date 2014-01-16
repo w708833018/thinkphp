@@ -27,6 +27,9 @@ class IndexAction extends HomeAction {
 	}
 
 	public function showPage(){
+		if($_GET['tag']){
+			$this->assign('tag',$_GET['tag']);
+		}
 		$this->display();
 	}
 
