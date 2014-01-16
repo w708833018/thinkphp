@@ -67,6 +67,13 @@ a,a:hover{color:#333;}
 .f-csm{cursor:move;}
 .f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
 .f-layout980{width: 980px;margin: 0 auto;}
+.f-active{
+border: 1px solid #DDD ;
+	border-bottom: 1px solid #Fff;
+	-moz-border-radius: 8px 8px 0px 0px;      /* Gecko browsers */
+	-webkit-border-radius: 8px 8px 0px 0px;  /* Webkit browsers */
+	border-radius:8px 8px 0px 0px;            /* W3C syntax */
+}
 
 /* 公共布局 */
 /*header start*/

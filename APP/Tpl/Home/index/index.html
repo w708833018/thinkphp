@@ -6,9 +6,9 @@
 <!--右侧 end-->
 <script>
 	seajs.use(['$'],function(){
-		$('#g-right').load('__APP__/Index/showPage');
+		$('#g-right').load('__APP__/Index/listPage');
 		$('.use').click(function(){
-			$('#g-right').load('__APP__/Index/showPage','tag='+$(this).text());
+			$('#g-right').load('__APP__/Index/listPage','tag='+$(this).text());
 		})
 	})
 </script>

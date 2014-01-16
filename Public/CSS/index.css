@@ -32,9 +32,7 @@
   position: relative;
   margin-top: 50px;
   margin-left: 250px;
-  padding: 10px;
   background-color: #ededf0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .g-right .g-right-article {
   margin: 0 auto;
@@ -42,8 +40,30 @@
   width: 900px;
   background-color: #ffffff;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 .g-right .g-right-article .m-article {
   padding: 10px;
   line-height: 30px;
+}
+.g-right .g-right-list {
+  padding: 15px;
+  display: block;
+  background-color: #ffffff;
+}
+.g-right .g-right-list .nav-tabs {
+  font: 14px/29px "Microsoft YaHei", "Microsoft JhengHei", "黑体";
+  border-bottom: 1px solid #DDD;
+  width: 700px;
+  height: 30px;
+}
+.g-right .g-right-list .nav-tabs a,
+.g-right .g-right-list .nav-tabs a:hover {
+  display: block;
+  padding: 0 10px ;
+  color: #252525;
+  text-align: center;
+}
+.g-right .g-right-list .nav-tabs li {
+  float: left;
 }

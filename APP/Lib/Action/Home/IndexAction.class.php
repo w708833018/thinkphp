@@ -26,6 +26,12 @@ class IndexAction extends HomeAction {
 		$this->display();
 	}
 
+	public function listPage(){
+		$tag = $_GET['tag'] ?  $_GET['tag'] : '全部文章';
+		$this->assign('tag',$tag);
+		$this->display();
+	}
+
 	public function showPage(){
 		if($_GET['tag']){
 			$this->assign('tag',$_GET['tag']);
