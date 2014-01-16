@@ -1,12 +1,22 @@
-/*header*/
+/*header start*/
 .g-top {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
   width: 100%;
   height: 49px;
   background: #252525;
   color: #FFFFFF;
+  box-shadow: 2px 2px 5px #333;
+}
+.g-top .logo {
+  margin-left: 10px;
+  width: 69px;
+  height: 48px;
+  display: block;
+  float: left;
+  background: url('../imgs/common/logo.png') no-repeat;
 }
 .g-top .g-top-nav {
   height: 49px;
@@ -35,14 +45,64 @@
   display: block;
   float: left;
 }
+/*header end*/
 .g-middle {
   width: 100%;
 }
+/*left start*/
 .g-left {
   position: fixed;
   top: 49px;
   left: 0;
-  width: 140px;
+  width: 250px;
   height: 100%;
-  background: #2A2B2D;
+  background: #3D3D3D;
+}
+.g-left .g-left-type {
+  display: block;
+  width: 250px;
+  margin-top: 25px ;
+}
+.g-left .g-left-type dt {
+  padding-left: 90px;
+  background: #252525;
+  font: 14px/30px "Microsoft YaHei", "Microsoft JhengHei", "黑体";
+}
+.g-left .g-left-type dd {
+  padding-top: 10px;
+  height: 180px;
+}
+.g-left .g-left-type dd .g-left-p li a {
+  margin: 0 6px;
+  display: block;
+  width: 240px;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+}
+.g-left .g-left-type dd .g-left-p li a:hover {
+  color: #0099ff;
+}
+.g-left .g-left-type a {
+  color: #ffffff;
+}
+/*right start*/
+.g-right {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 250px;
+  padding: 10px;
+  background-color: #ededf0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.g-right .g-right-article {
+  margin: 0 auto;
+  padding: 15px;
+  width: 900px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.g-right .g-right-article .m-article {
+  padding: 10px;
+  line-height: 30px;
 }

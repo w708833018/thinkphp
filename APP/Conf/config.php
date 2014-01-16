@@ -13,7 +13,7 @@
 		'URL_PATHINFO_DEPR'      => '/' ,        //修改url的分隔符
 		'TMPL_L_DELIM'           => '{',         //左定界符
 		'TMPL_R_DELIM'           => '}',         //右定界符
-		'SHOW_PAGE_TRACE'        =>  true,       //错误追踪
+		//'SHOW_PAGE_TRACE'        =>  true,       //错误追踪
 		'TMPL_TEMPLATE_SUFFIX'   =>  '.html',    //模板后缀
 		'APP_GROUP_LIST'		 =>'Admin,Home', //模板分组列表
 		'DEFAULT_GROUP'		     =>'Home',       //默认分组
