@@ -67,3 +67,55 @@
 .g-right .g-right-list .nav-tabs li {
   float: left;
 }
+.g-right .g-right-list .list-article {
+  width: 700px;
+  padding: 5px;
+  float: left;
+  margin-top: 10px;
+}
+.g-right .g-right-list .list-article .single_fake {
+  width: 700px;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.g-right .g-right-list .list-article .single_fake .single {
+  min-height: 50px;
+}
+.g-right .g-right-list .list-article .single_fake .single .single_left {
+  float: left;
+}
+.g-right .g-right-list .list-article .single_fake .single .article_title {
+  line-height: 1.2em;
+  font-size: 22px;
+  margin: 10px 0 5px 0;
+  font-weight: 500;
+}
+.g-right .g-right-list .list-article .single_fake .single .article_thumb {
+  margin-left: 75%;
+  padding-top: 20px;
+}
+.g-right .g-right-list .list-article .single_fake .single .article_cut {
+  font-size: 13px;
+  line-height: 1.7em;
+  margin-bottom: 10px;
+  color: #555;
+}
+.g-right .g-right-list .list-article .single_fake .single .clear {
+  clear: both;
+}
+.g-right .g-right-list .list-article .single_fake .tip {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  height: 20px;
+}
+.g-right .g-right-list .list-article .single_fake .tip span {
+  margin-right: 20px;
+  padding-left: 2px;
+  float: left;
+  display: block;
+}

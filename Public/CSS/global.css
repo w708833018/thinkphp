@@ -64,6 +64,8 @@ a,a:hover{color:#333;}
 .f-csp{cursor:pointer;}
 .f-csd{cursor:default;}
 .f-csh{cursor:help;}
+.f-wt100{width: 100%;}
+.f-wt70{width: 70%;}
 .f-csm{cursor:move;}
 .f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
 .f-layout980{width: 980px;margin: 0 auto;}
