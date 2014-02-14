@@ -1,3 +1,3 @@
 ﻿## 简介
 
-thiink学习
+think学习
