@@ -5,7 +5,12 @@
  */
 
 class BaseAction  extends  Action{
-
-
+	/**
+	 * 初始化
+	 */
+	Public function  _initialize(){
+		if(method_exists($this,'_init'))
+			$this->_init();
+	}
 
 } 

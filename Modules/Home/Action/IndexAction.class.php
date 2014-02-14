@@ -10,11 +10,10 @@ class IndexAction extends HomeAction {
 
 	private  $do;
 
-	function __construct(){
-		parent::__construct();
+	function _init(){
 		$this->do       = M('Member');
 		$this->post    = $_POST['post'] ;
-		$this->head_title    = '网站' ;
+		$this->head_title    = '云端' ;
 		$this->userid = $_GET['userid'];
 		$this->assign('head_title',$this->head_title);
 	}
