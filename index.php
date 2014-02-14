@@ -6,7 +6,7 @@
 		//3.开启调试模式
 		define('APP_DEBUG',True);
 		//4.应用核心文件
-		require ('./ThinkPHP/ThinkPHP.php');
+		require (APP_PATH.'Core/ThinkPHP.php');
 
 
 
