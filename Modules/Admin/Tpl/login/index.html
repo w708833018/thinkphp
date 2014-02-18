@@ -1,0 +1,43 @@
+<include file="Public:header" />
+	<body>
+		<div class="top">
+			<h1>登录</h1>
+		</div>
+		<div class="login">
+			<form action="__URL__/pass" method="post" id="pub-form" name="pub-form">
+				<table class="data-form">
+					<tr>
+						<th width="90">用户名：</th>
+						<td width="120">
+							<input type="text"
+							 size="20" name="post[username]" id="username"
+						     class="graybd-ipt easyui-validatebox"
+						     data-options="required:true,validType:'length[1,50]',missingMessage:'请填写用户名'">
+						</td>
+					</tr>
+					<tr>
+						<th>密　码：</th>
+						<td><input type="password" size="20" name="post[password]" ></td>
+					</tr>
+					<tr>
+						<th>验证码：</th>
+						<td><input type="text" size="5" name="post[code]">
+							<img src="__APP__/Login/code" style="vertical-align:middle;" onclick="this.src=this.src+'?'+Math.random()">
+						</td>
+					</tr>
+					<tr>
+						<th><input type="submit" class="btn"  value="提交"></th>
+						<td><input type="reset" class="btn"  value="重置"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>
+<script>
+	seajs.use(['easyui','easyui-css'],function(easy,css){
+			$('#pub-form').on('submit',function(){
+				return $('#pub-form').form('validate');
+			});
+	})
+</script>
