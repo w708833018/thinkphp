@@ -1,14 +1,27 @@
 <include file="Public:header"/>
-<ul style="top:100px;left:100px;position: fixed">
+<ul style="top:100px;left:100px;position: fixed;line-height: 30px">
+	<li>测试</li>
+	<li class="d">测试</li>
+	<li>测试</li>
+	<li>测试</li>
+	<li>测试</li>
+	<li>测试</li>
+	<li>测试</li>
+	<li>测试</li>
 	<li>测试</li>
 	<li>测试</li>
 	<li>测试</li>
 	<li>测试</li>
 </ul>
-<script>
-	seajs.use(){
 
-	}
+<script>
+	seajs.use(['$'],function(){
+		//$('ul').children('li:last').css('background','#ccc');
+	$('li').eq(5).css('background','#ccc');
+	$('li').first().css('background','#ccc');
+		$('li').last().css('color','#ccc');
+		$('li').not('.d').css('background','#ccc');
+	})
 </script>
 </body>
 </html>
