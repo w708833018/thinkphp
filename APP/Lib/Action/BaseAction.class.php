@@ -13,4 +13,13 @@ class BaseAction  extends  Action{
 			$this->_init();
 	}
 
+	/**
+	 * 验证码
+	 */
+	public function code(){
+		import('ORG.Util.Image');
+		var_dump(Image::buildImageVerify(4,1,'png',48,22,'code'));
+	}
+
+
 } 

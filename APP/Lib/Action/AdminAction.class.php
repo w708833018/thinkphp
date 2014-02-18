@@ -4,7 +4,7 @@
  * Time: 14-1-14 下午2:25
  */
 
-class HomeAction extends  BaseAction{
+class AdminAction extends  BaseAction{
 
 
 
