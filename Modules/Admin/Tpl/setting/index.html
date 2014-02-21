@@ -11,52 +11,49 @@
 		</ul>
 		</header>
 		<div class="tab_container">
+			<form action="{:U('Setting/set')}"  method="post" id="pub-form">
 			<div id="tab1" class="tab_content">
-				<form action="{:U('Setting/set')}"  method="post" id="pub-form">
 					<div class="module_content">
 						<fieldset style="width:48%;  padding-right: 3%;">
 							<label>网站名称</label>
-							<input type="text" value="" name="setting[sitename]">
+							<input type="text" value="{$set[sitename]}" name="setting[sitename]">
 						</fieldset>
 						<fieldset style="width:48%;  padding-right: 3%;">
 							<label>网站地址</label>
-							<input type="text" value="" name="setting[url]">
+							<input type="text" value="{$set[url]}" name="setting[url]">
 						</fieldset>
 						<fieldset style="width:48%;  padding-right: 3%;">
 							<label>联系电话</label>
-							<input type="text" value="" name="setting[tel]">
+							<input type="text" value="{$set[tel]}" name="setting[tel]">
 						</fieldset>
 						<fieldset style="width:48%;  padding-right: 3%;">
 							<label>联系邮箱</label>
-							<input type="text" value="" name="setting[mail]">
+							<input type="text" value="{$set[mail]}" name="setting[mail]">
 						</fieldset>
 						<fieldset style="width:60%;  padding-right: 3%;">
 							<label>版权信息</label>
-							<textarea rows="5" name="setting[copyright]"></textarea>
+							<textarea rows="5" name="setting[copyright]">{$set[copyright]}</textarea>
 						</fieldset>
 					</div>
 					<footer>
 						<div class="submit_link">
 							<input type="submit" value="保存" class="alt_btn">
 						</div>
-
 				</footer>
-			 </form>
 			</div>
 			<div id="tab2" class="tab_content">
-				<form action="{:U('Setting/set')}" method="post" id="pub-form">
 				<div class="module_content">
 					<fieldset style="width:48%;  padding-right: 3%;">
 						<label>SEO标题</label>
-						<input type="text" value="" name="setting[seo_title]">
+						<input type="text" value="{$set[seo_title]}" name="setting[seo_title]">
 					</fieldset>
 					<fieldset style="width:48%;  padding-right: 3%;">
 						<label>SEO关键字</label>
-						<input type="text" value="" name="setting[seo_keyword]">
+						<input type="text" value="{$set[seo_keyword]}" name="setting[seo_keyword]">
 					</fieldset>
 					<fieldset style="width:60%;  padding-right: 3%;">
 						<label>SEO描述</label>
-						<textarea rows="5" name="setting[seo_description]"></textarea>
+						<textarea rows="5" name="setting[seo_description]">{$set[seo_description]}</textarea>
 					</fieldset>
 				</div>
 				<footer>
@@ -65,8 +62,8 @@
 					</div>
 				</footer>
 			</table>
-			</form>
 			</div>
+			</form>
 		</div>
 		</article>
 		<div class="clear"></div>
@@ -79,9 +76,9 @@
 				success:function(data){
 					var data = eval('(' + data + ')');
 					if(data.success){
-						$('.alert_success').text(data.message).show(500).delay(800).hide(500);
+						$('.alert_success').text(data.message).slideDown(500).delay(800).slideUp(500);
 					}else{
-						$('.alert_error').text(data.message).show(500).delay(1000).hide(500);
+						$('.alert_error').text(data.message).slideDown(500).delay(1000).slideUp(500);
 					}
 				}
 			});

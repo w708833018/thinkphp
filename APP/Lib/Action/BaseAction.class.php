@@ -9,6 +9,11 @@ class BaseAction  extends  Action{
 	 * 初始化
 	 */
 	Public function  _initialize(){
+		$set = M('setting')->getByItem(1);
+		foreach($set as $k=>$v){
+			$setting[$v['item_key']] = $v['item_value'];
+		}
+		$this->assign('set',$setting);
 		if(method_exists($this,'_init'))
 			$this->_init();
 	}
@@ -22,4 +27,4 @@ class BaseAction  extends  Action{
 	}
 
 
-} 
+}

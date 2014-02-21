@@ -5,26 +5,32 @@
 class SettingAction extends AdminAction {
 
 		public  function index(){
-			$this->display();
+			$set = M('setting');
+			$set=$set->where(array('item'=>1))->select();
+			foreach($set as $k=>$v){
+				$setting[$v['item_key']] = $v['item_value'];
+			}
+			$this->assign('set',$setting)->display();
 		}
 
 		public  function set(){
 			$set = M('setting');
 			if(I('setting')){
 				foreach(I('setting') as $k=>$v){
-					if(!$v){
-						if(!$set->getByItem_key($k)){
-							$data[$k] = $v;
-							$set->add($data);
+					if($v){
+						$data['item_value'] = $v;
+						if($set->where(array('item_key'=>$k))->count()){
+							$set->where(array('item_key'=>$k))->setField($data);
 						}else{
-							$data[$k] = $v;
-							$set->save($data);
+							$data['item_key'] = $k;
+							$data['item'] = 1;
+							$set->add($data);
 						}
 					}
 				}
 			}
-			$data['success']=1;
-			$data['message']='保存成功';
-			$this->ajaxReturn($data);
+			$return['success']=1;
+			$return['message']='保存成功';
+			$this->ajaxReturn($return);
 		}
 }

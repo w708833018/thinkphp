@@ -12,5 +12,4 @@ class AdminAction extends  BaseAction{
 		$this->assign('user',$user);
 	}
 
-
 } 

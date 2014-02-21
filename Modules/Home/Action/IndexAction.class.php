@@ -2,20 +2,8 @@
 
 class IndexAction extends HomeAction {
 
-	private  $head_title;
-
-	private  $post;
-
-	private  $userid;
-
-	private  $do;
 
 	function _init(){
-		$this->do       = M('Member');
-		$this->post    = $_POST['post'] ;
-		$this->head_title    = '云端' ;
-		$this->userid = $_GET['userid'];
-		$this->assign('head_title',$this->head_title);
 	}
 
 	public function index(){
