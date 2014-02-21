@@ -1,7 +1,52 @@
-<!--middle start-->
-<div class="g-middle">
-	<!--左侧 start-->
-	<div class="g-left">
-		{__CONTENT__}
+<body>
+
+<header id="header">
+	<hgroup>
+		<h1 class="site_title"><a href="{:U('Index/index')}">OMG 后台管理系统</a></h1>
+		<h2 class="section_title"></h2>
+		<div class="btn_view_site"><a href="{:C('url')}">前台首页</a></div>
+	</hgroup>
+</header> <!-- end of header bar -->
+
+<section id="secondary_bar">
+	<div class="user">
+		<p>欢迎您，{$user['username']}</p>
+		<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 	</div>
-<!--左侧 end-->
+	<div class="breadcrumbs_container">
+		<article class="breadcrumbs"><a href="index.html">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+	</div>
+</section><!-- end of secondary bar -->
+
+<aside id="sidebar" class="column">
+	<form class="quick_search">
+		<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+	</form>
+	<hr/>
+	<h3>基本设置</h3>
+	<ul class="toggle">
+		<li ><a href="{:U('Setting/index')}">网站设置</a></li>
+		<li ><a href="#">个人信息</a></li>
+		<li ><a href="#">清除缓存</a></li>
+	</ul>
+	<h3>内容管理</h3>
+	<ul class="toggle">
+		<li ><a href="#">文章管理</a></li>
+		<li ><a href="#">分类管理</a></li>
+	</ul>
+	<h3>用户管理</h3>
+	<ul class="toggle">
+		<li ><a href="#">Add New User</a></li>
+		<li ><a href="#">View Users</a></li>
+		<li ><a href="#">Your Profile</a></li>
+	</ul>
+	<h3>扩展</h3>
+	<ul class="toggle">
+		<li ><a href="{:U('Login/logout')}">退出系统</a></li>
+	</ul>
+	<!--<footer>
+			<hr />
+			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
+			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
+		</footer>-->
+</aside><!-- end of sidebar -->

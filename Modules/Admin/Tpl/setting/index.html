@@ -1,0 +1,91 @@
+<include file="Public/header"/>
+<include file="Public/left"/>
+	<section id="main" class="column">
+		<h4 class="alert_success" style="display: none"></h4>
+		<h4 class="alert_error" style="display: none"></h4>
+		<article class="module width_3_quarter">
+		<header><h3 class="tabs_involved">网站设置</h3>
+		<ul class="tabs">
+   			<li><a href="#tab1">基本信息</a></li>
+    		<li><a href="#tab2">SEO设置</a></li>
+		</ul>
+		</header>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<form action="{:U('Setting/set')}"  method="post" id="pub-form">
+					<div class="module_content">
+						<fieldset style="width:48%;  padding-right: 3%;">
+							<label>网站名称</label>
+							<input type="text" value="" name="setting[sitename]">
+						</fieldset>
+						<fieldset style="width:48%;  padding-right: 3%;">
+							<label>网站地址</label>
+							<input type="text" value="" name="setting[url]">
+						</fieldset>
+						<fieldset style="width:48%;  padding-right: 3%;">
+							<label>联系电话</label>
+							<input type="text" value="" name="setting[tel]">
+						</fieldset>
+						<fieldset style="width:48%;  padding-right: 3%;">
+							<label>联系邮箱</label>
+							<input type="text" value="" name="setting[mail]">
+						</fieldset>
+						<fieldset style="width:60%;  padding-right: 3%;">
+							<label>版权信息</label>
+							<textarea rows="5" name="setting[copyright]"></textarea>
+						</fieldset>
+					</div>
+					<footer>
+						<div class="submit_link">
+							<input type="submit" value="保存" class="alt_btn">
+						</div>
+
+				</footer>
+			 </form>
+			</div>
+			<div id="tab2" class="tab_content">
+				<form action="{:U('Setting/set')}" method="post" id="pub-form">
+				<div class="module_content">
+					<fieldset style="width:48%;  padding-right: 3%;">
+						<label>SEO标题</label>
+						<input type="text" value="" name="setting[seo_title]">
+					</fieldset>
+					<fieldset style="width:48%;  padding-right: 3%;">
+						<label>SEO关键字</label>
+						<input type="text" value="" name="setting[seo_keyword]">
+					</fieldset>
+					<fieldset style="width:60%;  padding-right: 3%;">
+						<label>SEO描述</label>
+						<textarea rows="5" name="setting[seo_description]"></textarea>
+					</fieldset>
+				</div>
+				<footer>
+					<div class="submit_link">
+						<input type="submit" value="保存" class="alt_btn">
+					</div>
+				</footer>
+			</table>
+			</form>
+			</div>
+		</div>
+		</article>
+		<div class="clear"></div>
+		<!-- end of post new article -->
+		<div class="spacer"></div>
+	</section>
+	<script>
+		seajs.use(['$','easyui'],function($){
+			$('#pub-form').form({
+				success:function(data){
+					var data = eval('(' + data + ')');
+					if(data.success){
+						$('.alert_success').text(data.message).show(500).delay(800).hide(500);
+					}else{
+						$('.alert_error').text(data.message).show(500).delay(1000).hide(500);
+					}
+				}
+			});
+		})
+	</script>
+</body>
+</html>
