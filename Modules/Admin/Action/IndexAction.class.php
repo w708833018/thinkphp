@@ -1,6 +1,6 @@
 <?php
 
-class IndexAction extends HomeAction {
+class IndexAction extends AdminAction {
 
 		public  function index(){
 			$this->display();

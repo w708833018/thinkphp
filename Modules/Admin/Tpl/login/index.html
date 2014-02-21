@@ -1,43 +1,40 @@
-<include file="Public:header" />
-	<body>
-		<div class="top">
-			<h1>登录</h1>
+<!DOCTYPE HTML>
+<html  lang="CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Web 2.0 Login Form</title>
+
+	<!--- CSS --->
+	<link rel="stylesheet" href="__CSS__/login/style.css" type="text/css" />
+
+	<!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
+
+	<!--[if (gte IE 6)&(lte IE 8)]>
+	<script type="text/javascript" src="__JS__/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="__JS__/selectivizr.js"></script>
+	<noscript><link rel="stylesheet" href="__CSS__/Login/fallback.css" /></noscript>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="container">
+	<form action="{:U('Admin/Login/login')}" method="post">
+		<div class="login">OMG-LOGIN</div>
+		<div class="username-text">用户名:</div>
+		<div class="password-text">密码:</div>
+		<div class="username-field">
+			<input type="text" name="username" value="" />
 		</div>
-		<div class="login">
-			<form action="__URL__/pass" method="post" id="pub-form" name="pub-form">
-				<table class="data-form">
-					<tr>
-						<th width="90">用户名：</th>
-						<td width="120">
-							<input type="text"
-							 size="20" name="post[username]" id="username"
-						     class="graybd-ipt easyui-validatebox"
-						     data-options="required:true,validType:'length[1,50]',missingMessage:'请填写用户名'">
-						</td>
-					</tr>
-					<tr>
-						<th>密　码：</th>
-						<td><input type="password" size="20" name="post[password]" ></td>
-					</tr>
-					<tr>
-						<th>验证码：</th>
-						<td><input type="text" size="5" name="post[code]">
-							<img src="__APP__/Login/code" style="vertical-align:middle;" onclick="this.src=this.src+'?'+Math.random()">
-						</td>
-					</tr>
-					<tr>
-						<th><input type="submit" class="btn"  value="提交"></th>
-						<td><input type="reset" class="btn"  value="重置"></td>
-					</tr>
-				</table>
-			</form>
+		<div class="password-field">
+			<input type="password" name="password" value="" />
 		</div>
-	</body>
+		<input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">Remember me</label>
+		<div class="forgot-usr-pwd"></div>
+		<input type="submit"  value="GO" />
+	</form>
+</div>
+
+</body>
 </html>
-<script>
-	seajs.use(['easyui','easyui-css'],function(easy,css){
-			$('#pub-form').on('submit',function(){
-				return $('#pub-form').form('validate');
-			});
-	})
-</script>

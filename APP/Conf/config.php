@@ -9,7 +9,8 @@
 		'APP_GROUP_LIST'		 =>'Admin,Home', //模板分组列表
 		'DEFAULT_GROUP'		     =>'Home',       //默认分组
 		'APP_GROUP_MODE'         =>1,             //开启独立分组 0：普通分组 1：独立分组
-		'APP_GROUP_PATH'         =>'../Modules'      //独立分组目录
+		'APP_GROUP_PATH'         =>'../Modules' ,     //独立分组目录
+		'URL'                    => 'http://'.$_SERVER['HTTP_HOST']     //独立分组目录
 		//'TMPL_FILE_DEPR'       =>  '_',      //模板层次
 	    //DEFAULT_THEME'         =>  'index',   //默认模板主题
 	    //'TMPL_DETECT_THEME'    =>   true,       //自动侦测模板主题

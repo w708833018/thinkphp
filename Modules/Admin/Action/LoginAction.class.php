@@ -1,27 +1,36 @@
 <?php
 
-class LoginAction extends HomeAction {
+class LoginAction extends BaseAction {
 
+	public  function index(){
+		$this->display();
+	}
 
-		function __construct(){
-			parent::__construct();
-			$this->do       = M('Member');
-			$this->post    = $_POST['post'] ;
-			$this->head_title    = '登录' ;
-			$this->userid = $_GET['userid'];
-			$this->assign('head_title',$this->head_title);
+	public  function login(){
+		if(!I('post.')) _404('此页面不存在');
+		$user=M('user')->getByUsername(I('username'));
+		if( !$user['username'] || $user['password'] !== md5(I('password'))){
+				$this->error('用户名或密码错误');
 		}
+		$data=array(
+			'userid'  =>$user['userid'],
+			'logintime'=>time(),
+			'loginip'  =>get_client_ip()
+		);
+		M('user')->save($data);
+		$user=M('user')->getByUsername($user['username']);
+		session('userid',$user['userid']);
+		session('username',$user['username']);
+		session('logintime',$user['logintime']);
+		session('loginip',$user['loginip']);
+		$this->redirect('Index/index');
 
+	}
 
-         public function index(){
-			$this->display();
-         }
-		public function pass(){
-			if($_SESSION['code'] != md5($this->post['code']))$this->error('验证码错误！');
-			if(!$this->do->where("username ='".$this->post['username']."'")->count())$this->error('用户名错误！');
-			if(!$this->do->where("password ='".$this->post['password']."'")->count())$this->error('密码错误！');
-			//$this->success('登录成功','Index/index');
-			$this->redirect('Index/index','',3,'登录成功，页面跳转中......');
-		}
+	public  function  logout(){
+		session_unset();
+		session_destroy();
+		$this->redirect('Login/index');
+	}
 
 }
