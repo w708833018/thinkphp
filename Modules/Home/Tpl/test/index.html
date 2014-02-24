@@ -1,27 +1,77 @@
-<include file="Public:header"/>
-<ul style="top:100px;left:100px;position: fixed;line-height: 30px">
-	<li>测试</li>
-	<li class="d">测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-	<li>测试</li>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试</title>
+	<script src="__JS__/global.js" ></script>
+	<script src="__JS__/libs/seajs/sea.js" ></script>
+	<script src="__JS__/libs/config.js"></script>
+</head>
+	<style>
+		.box{
+					  width: 800px;
+					  height: 300px;
+					  overflow: hidden;
+					  border:  1px solid #ccc;
+					  margin: 0 auto;
+				  }
+		.list{
+			width: 3200px;
+			overflow: hidden;
+		}
+		.pic{
+			width: 800px;
+			height: 300px;
+			float: left;
 
-<script>
-	seajs.use(['$'],function(){
-		//$('ul').children('li:last').css('background','#ccc');
-	$('li').eq(5).css('background','#ccc');
-	$('li').first().css('background','#ccc');
-		$('li').last().css('color','#ccc');
-		$('li').not('.d').css('background','#ccc');
-	})
-</script>
+		}
+	</style>
+<body>
+	 <div class="box">
+		    <div class='list'>
+			    <div class='pic' style="background: #f00">
+			    </div>
+			    <div class='pic' style="background: #00f">
+			    </div>
+			    <div class='pic' style="background: #f0f">
+			    </div>
+			    <div class='pic' style="background: #0f0">
+			    </div>
+			 </div>
+	</div>
+	 <input type="button" value="Start" id="btn">
+	<script>
+		seajs.use(['$'],function(){
+			var scroll =function(param){
+				var _this = param.id,
+					index = 0,
+					timer =  param.id || 1000,
+					len =	_this.find('div.pic').length,
+					width =  param.width,
+					speed = param.speed || 500;
+				function scrollAct(index){
+					_this.animate({
+						'marginLeft':-width*index
+					},speed)
+				}
+
+				var scrollRight = function(){
+						index++;
+					if(index>=len){index=0}
+					scrollAct(index);
+				}
+				var autoPlay = function(){
+					window.setInterval(scrollRight(),timer);
+				}
+				var autoStop = function(){
+					clearInterval(scrollRight());
+				}
+				_this.hover(autoStop,autoPlay).trigger("mouseout");
+			};
+			scroll({
+				id:$('.list'),
+				width:800
+			});
+		})
+	</script>
 </body>
 </html>
