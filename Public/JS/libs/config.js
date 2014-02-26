@@ -12,7 +12,10 @@ var alias={
 	'tags': "JS/libs/util/tags",
 	'tags-css': "JS/libs/util/tags.css",
 	'easyui':'JS/libs/easyui/jquery.easyui.min',
-	'easyui-css':'JS/libs/easyui/themes/metro/easyui.css'
+	'easyui-css':'JS/libs/easyui/themes/metro/easyui.css',
+
+	'bootstrap':'JS/libs/bootstrap-3.0.3/dist/js/bootstrap.min',
+	'bootstrap-css':'JS/libs/bootstrap-3.0.3/dist/css/bootstrap.min.css'
 };
 
 for (var a in alias) {
