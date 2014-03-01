@@ -17,31 +17,63 @@
 	<![endif]-->
 </head>
 <body >
-	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">OMG</a>
+<!--navbar start-->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">OMG内容管理系统</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<!--<form class="navbar-form navbar-left ">
+			<div class="form-group">
+				<input type="text" class="form-control input-sm" placeholder="Search">
 			</div>
-		</div><!-- /.container -->
-	</div><!-- /.navbar -->
-	<div class="container">
-		<div class="row">
+			<button class="btn btn-primary btn-sm" type="submit">Search</button>
+		</form>-->
+		<ul class="nav navbar-nav pull-right">
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+					欢迎 admin <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu  " >
+					<li><a href="#"><span class="glyphicon glyphicon-tree-deciduous"></span> 网站前台</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><span class="glyphicon glyphicon-off"></span>  退出系统</a></li>
+				</ul >
+			</li>
+		</ul>
+	</div>
+</nav>
+<!--navbar end-->
+<div class="container">
+	<div class="row">
 		<div class="col-md-2 ">
 			<div class="panel panel-default " id="accordion">
-				<div class="panel-heading">设置</div>
+				<div class="panel-heading hidden"></div>
 				<ul class="list-group">
 					<li class="list-group-item">
 						<span class="glyphicon glyphicon-cog"></span>
-						<a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 网站设置</a>
+						<a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 网站设置 </a>
 					</li>
-					<li class="list-group-item"><span class="glyphicon glyphicon-user"></span>  用户管理</li>
+					<li class="list-group-item "><span class="glyphicon glyphicon-user"></span>  用户管理</li>
 					<li class="list-group-item"><span class="glyphicon glyphicon-align-justify"></span>  菜单管理</li>
 					<li class="list-group-item"><span class="glyphicon glyphicon-book"></span>  内容管理</li>
 					<li class="list-group-item"><span class="glyphicon glyphicon-wrench"></span>  扩展工具</li>
 				</ul>
 			</div>
 		</div><!--左侧end-->
-		<div class="col-md-5">
+	<div class="col-md-10"> <!--右侧 start-->
+		<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron">
+						<h1>Hello, world!</h1>
+						<p>I love china</p>
+						<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+					</div>
+				</div>
+		</div>
+		<div class="row">
+		<div class="col-md-6">
 			<div class="panel panel-default center-block">
 				<div class="container">
 			<h1 ><code>hello word</code><small>small</small></h1>
@@ -113,7 +145,93 @@
 					<h1 class="text-hide">Custom heading</h1>
 		      </div>
 		  </div>
-		</div><!--col9 end-->
+		</div><!--col5 end-->
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">导航 Start</div>
+				<hr>
+				<div class="container">
+					<ul class="nav nav-pills  ">
+						<li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+						<li class="disabled"><a href="#">2015 <span class="badge">1</span></a></li>
+						<li class="dropdown">
+							<a href="#" data-toggle="dropdown" class="doropdown-toggle">
+								2014 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu pull-right">
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<hr>
+			</div>
+			<div class="panel panel-default">
+				<div class="container">
+				<h2>hello Right <small>This is  test</small></h2>
+				<hr>
+					<!--按钮组 start-->
+						<div class="btn-group-vertical ">
+							<button class="btn btn-default"> 保存</button>
+							<button class="btn btn-default">关闭</button>
+							<button class="btn btn-default">重启</button>
+							<button class="btn btn-default">注销</button>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									Dropdown
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Dropdown link</a></li>
+									<li><a href="#">Dropdown link</a></li>
+								</ul>
+							</div>
+						</div>
+					<hr>
+					<div class="btn-group btn-group-justified btn-group-sm">
+						<a class="btn btn-primary">1</a>
+						<a class="btn btn-primary">2</a>
+						<a class="btn btn-primary">3</a>
+					</div>
+					<hr>
+					<!-- Single button -->
+					<div class="btn-group dropup">
+						<button type="button" class="btn btn-primary ">
+							Action
+						</button>
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						      <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div>
+					<hr>
+					<div class="input-group">
+						<input type="text" class="form-control">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
+					<!--按钮组 end-->
+			   </div><!--container end-->
+				<hr>
+		</div><!--panel end-->
+		</div>
+		</div> <!--右侧 end-->
 		</div><!--row end-->
 	</div>
 <script>

@@ -1,9 +1,12 @@
 body {
-  padding-top: 55px;
+  padding-top: 60px;
 }
 .container {
   width: 100% !important;
 }
 .form-control {
   width: 50%;
+}
+.glyphicon {
+  margin-right: 5px;
 }
