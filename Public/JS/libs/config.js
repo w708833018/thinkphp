@@ -15,7 +15,8 @@ var alias={
 	'easyui-css':'JS/libs/easyui/themes/metro/easyui.css',
 
 	'bootstrap':'JS/libs/bootstrap-3.0.3/dist/js/bootstrap.min',
-	'bootstrap-css':'JS/libs/bootstrap-3.0.3/dist/css/bootstrap.min.css'
+	'bootstrap-css':'JS/libs/bootstrap-3.0.3/dist/css/bootstrap.css',
+	'bootstrap-theme':'JS/libs/bootstrap-3.0.3/dist/css/bootstrap-theme.css'
 };
 
 for (var a in alias) {
