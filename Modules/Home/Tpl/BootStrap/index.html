@@ -4,7 +4,7 @@
 	<title>Bootstrap 101 Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
-	<link   href="__CSS__/bootstrap.css" rel="stylesheet">
+
 	<script src="__JS__/global.js" ></script>
 	<script src="__JS__/libs/seajs/sea.js" ></script>
 	<script src="__JS__/libs/config.js"></script>
@@ -47,7 +47,93 @@
 <!--navbar end-->
 <!--left start-->
 <div class="container">
-	<ul class="list-group " data-spy="affix" style="width: 200px">
+	<div class="panel-group omg-panel-group" data-spy="affix" style="width: 200px" id="accordion">
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-cog"></span>
+				<a href="#site_set"data-toggle="collapse" data-parent="#accordion" >网站设置</a>
+				<span class="caret" ></span>
+			</div>
+			<ul class="list-group panel-collapse collapse " id="site_set">
+				<li class="list-group-item">
+					<a  href="#" > 个人信息 </a>
+				</li>
+				<li class="list-group-item ">
+					<a href="">网站信息</a>
+				</li>
+				<li class="list-group-item">
+					<a href="">清除缓存</a>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-user"></span>
+				<a href="#site_user"data-toggle="collapse" data-parent="#accordion" >用户管理</a>
+				<span class="caret" ></span>
+			</div>
+			<ul class="list-group panel-collapse collapse " id="site_user">
+				<li class="list-group-item">
+					<a  href="#" > 用户组 </a>
+				</li>
+				<li class="list-group-item ">
+					<a href="">管理组</a>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-align-justify"></span>
+				<a href="#site_menu"data-toggle="collapse" data-parent="#accordion" >菜单管理</a>
+				<span class="caret" ></span>
+			</div>
+			<ul class="list-group panel-collapse collapse " id="site_menu">
+				<li class="list-group-item">
+					<a  href="#" > 前台菜单 </a>
+				</li>
+				<li class="list-group-item ">
+					<a href="">后台菜单</a>
+				</li>
+			</ul>
+		</div>
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-book"></span>
+				<a href="#site_content"data-toggle="collapse" data-parent="#accordion" >内容管理</a>
+				<span class="caret" ></span>
+			</div>
+					<ul class="list-group panel-collapse collapse " id="site_content">
+						<li class="list-group-item">
+							<a  href="#" > 文章管理 </a>
+						</li>
+						<li class="list-group-item ">
+							<a href="">分类管理</a>
+						</li>
+						<li class="list-group-item">
+							<a href="">模块管理</a>
+						</li>
+					</ul>
+		</div>
+		<div class="panel panel-default" >
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-wrench"></span>
+				<a href="#site_tools"data-toggle="collapse" data-parent="#accordion" >扩展工具</a>
+				<span class="caret" ></span>
+			</div>
+			<ul class="list-group panel-collapse collapse " id="site_tools">
+				<li class="list-group-item">
+					<a  href="#" > 幻灯片 </a>
+				</li>
+				<li class="list-group-item ">
+					<a href="">网站广告</a>
+				</li>
+				<li class="list-group-item">
+					<a href="">友情链接</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--<ul class="list-group " data-spy="affix" style="width: 200px">
 		<li class="list-group-item">
 			<span class="glyphicon glyphicon-cog"></span>
 			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 网站设置 </a>
@@ -56,7 +142,7 @@
 		<li class="list-group-item"><span class="glyphicon glyphicon-align-justify"></span>  菜单管理</li>
 		<li class="list-group-item"><span class="glyphicon glyphicon-book"></span>  内容管理</li>
 		<li class="list-group-item"><span class="glyphicon glyphicon-wrench"></span>  扩展工具</li>
-	</ul>
+	</ul>-->
 </div>
 <!--left end-->
 <!--右侧 start-->
@@ -304,8 +390,11 @@
 	</div>
 <script>
 	seajs.use(['$','bootstrap','bootstrap-css'],function($){
-
+		$('#accordion').find('a[data-toggle=collapse]').click(function(){
+				$(this).parents('.panel').toggleClass('panel-primary').siblings().removeClass('panel-primary')
+		})
 	})
 </script>
+<link   href="__CSS__/bootstrap.css" rel="stylesheet">
 </body>
 </html>
