@@ -15,22 +15,25 @@ class SettingAction extends AdminAction {
 
 		public  function set(){
 			$set = M('setting');
-			if(I('setting')){
-				foreach(I('setting') as $k=>$v){
+			if(I('set')){
+				foreach(I('set') as $k=>$v){
 					if($v){
 						$data['item_value'] = $v;
 						if($set->where(array('item_key'=>$k))->count()){
-							$set->where(array('item_key'=>$k))->setField($data);
+							$return['success'] = $set->where(array('item_key'=>$k))->setField($data);
 						}else{
 							$data['item_key'] = $k;
 							$data['item'] = 1;
-							$set->add($data);
+							$return['success'] = $set->add($data);
 						}
 					}
 				}
 			}
-			$return['success']=1;
-			$return['message']='保存成功';
+			if($return['success']){
+				$return['message'] = '保存成功';
+			}else{
+				$return['message'] = '保存失败';
+			}
 			$this->ajaxReturn($return);
 		}
 }

@@ -7,6 +7,9 @@ body {
 .glyphicon {
   margin-right: 5px;
 }
+.bold {
+  font-weight: bold;
+}
 .navbar-inverse .navbar-brand {
   color: #ffffff;
 }
@@ -23,7 +26,7 @@ body {
   border-radius: 1px;
 }
 .omg-panel-group .caret {
-  margin-left: 70px;
+  margin-left: 65px;
 }
 .omg-panel-group .panel-default {
   border-color: #333333;
@@ -61,4 +64,11 @@ body {
 }
 .nav-tabs > li > a {
   color: #333333;
+}
+.submenu {
+  list-style: none;
+  line-height: 25px;
+  position: relative;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
 }
