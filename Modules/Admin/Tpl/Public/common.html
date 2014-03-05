@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-2">
+		<!--right start-->
+		<div class="row omg-right">
+			<div class="col-md-12" >
+				<div class="panel panel-default" >
+					<!-- Nav tabs -->
+					<ul class="nav nav-pills">
+						<li id="add"><a href="javascript:void(0)" data-url="{:U('Role/add')}">添加角色</a></li>
+						<li id="index"><a href="javascript:void(0)" data-url="{:U('Role/index')}">角色列表</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row omg-right">
+			<div class="col-md-12" >
+				<div id="content" >
+					{__CONTENT__}
+				</div>
+			</div>
+		</div>
+
+		<!--right end-->
+	</div>
+</div><!--row end-->
+<script>
+	seajs.use(['$'],function($){
+		$("#{$Think.const.ACTION_NAME}").addClass('active');
+		$('.nav-pills').find('a').click(function(){
+			$('#right-start').load($(this).attr('data-url'))
+		})
+	})
+</script>

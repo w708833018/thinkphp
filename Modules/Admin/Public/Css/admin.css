@@ -1,6 +1,11 @@
 body {
   padding-top: 60px;
 }
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
 .container {
   width: 100% !important;
 }
@@ -65,10 +70,7 @@ body {
 .nav-tabs > li > a {
   color: #333333;
 }
-.submenu {
-  list-style: none;
-  line-height: 25px;
-  position: relative;
-  background-color: #fff;
-  border-top: 1px solid #e5e5e5;
+.nav-pills > li > a {
+  color: #333;
+  border-radius: 4px;
 }

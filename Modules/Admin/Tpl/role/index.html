@@ -1,0 +1,26 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-10">
+		<div class="panel panel-default">
+			<div class="container" style="padding-top: 25px">
+				<table class="table table-hover" >
+					<tr>
+						<th>角色名称</th>
+						<th>角色别名</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+					<foreach name="list" item="v">
+						<tr>
+							<td>{$v.name}</td>
+							<td>{$v.remark}</td>
+							<td><eq name="v.status" value="1">激活<else/>禁用</eq></td>
+							<td><a href="{}">修改</a> | <a href="{:U('Role/delete','id='.$v[id])}">删除</a></td>
+						</tr>
+					</foreach>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
