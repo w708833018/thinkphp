@@ -1,25 +1,86 @@
-<include file="Public:header"/>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap 101 Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<script src="__JS__/global.js" ></script>
+	<script src="__JS__/libs/seajs/sea.js" ></script>
+	<script src="__JS__/libs/config.js"></script>
+	<link rel="shortcut icon" href="__PUBLIC__/imgs/common/favicon.ico"/>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		body{
+			padding-top: 60px;
+			padding-bottom: 50px;
+		}
+	</style>
+
+</head>
+<body >
+<!--navbar start-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-header">
+		<a href="#" class="navbar-brand">OMG内容管理系统</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav pull-right">
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+					欢迎 {$user['username']} <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" >
+					<li><a href="{:U('Home/Index/index')}" target="_blank"><span class="glyphicon glyphicon-tree-deciduous"></span> 网站前台</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+					<li class="divider"></li>
+					<li><a href="{:U('Login/logout')}"><span class="glyphicon glyphicon-off"></span>  退出系统</a></li>
+				</ul >
+			</li>
+		</ul>
+	</div>
+</nav>
+<!--navbar end-->
+<!--navbar start-->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+	<div class="navbar-header">
+		<a  class="navbar-brand">System info</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<small class="navbar-text ">运行环境：{$Think.const.PHP_OS}&nbsp;{$_SERVER["SERVER_SOFTWARE"]}</small>
+		<small class="navbar-text ">当前IP：{:gethostbyname($_SERVER['SERVER_NAME'])}</small>
+		<small class="navbar-text pull-right">总访问量：44</small>
+		<small class="navbar-text pull-right">今日访问量：5</small>
+	</div>
+</nav>
+<!--navbar end-->
+<include file="Public:left"/>
 <!--右侧 start-->
-<div class="container" id="right-start">
+<div class="container"  >
 <div class="row">
-	<div class="col-md-10 col-md-offset-2">
-		<div class="jumbotron">
-			<h1>Hello, world!</h1>
-			<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-			<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-		</div>
+	<div class="col-md-10 col-md-offset-2"  id="right-start">
+		<iframe id="iframe_content"  src="{:U('Setting/index')}"  style="width:100%;height: 100%" frameborder="0"></iframe>
 	</div>
 </div>
 </div>
 <!--container end-->
 <script>
-	seajs.use(['$'],function($){
+	seajs.use(['$','bootstrap','bootstrap-css'],function($){
 		$('.list-group').find('a').click(function(){
-			$(this).addClass('bold').parent('li').siblings().find('a').removeClass('bold');
-			$('#right-start').load($(this).attr('data-url'));
-
+			$('#right-start').find('#iframe_content').attr('src',$(this).attr('data-url'));
 		})
-	});
+	})
 </script>
-
-<include file="Public:footer"/>
+<script type="text/javascript">
+	window.onload = function() {
+		var right = document.getElementById("right-start");
+		right.style.height = (window.innerHeight-115) + 'px';
+	};
+</script>
+<link   href="__CSS__/admin.css" rel="stylesheet">
+</body>
+</html>

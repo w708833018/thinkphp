@@ -1,33 +1,62 @@
-<div class="row">
-	<div class="col-md-10 col-md-offset-2">
-		<!--right start-->
-		<div class="row omg-right">
-			<div class="col-md-12" >
-				<div class="panel panel-default" >
-					<!-- Nav tabs -->
-					<ul class="nav nav-pills">
-						<li id="add"><a href="javascript:void(0)" data-url="{:U('Role/add')}">添加角色</a></li>
-						<li id="index"><a href="javascript:void(0)" data-url="{:U('Role/index')}">角色列表</a></li>
-					</ul>
+<!doctype html>
+<html >
+<head>
+	<title>Bootstrap 101 Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<script src="__JS__/global.js" ></script>
+	<script src="__JS__/libs/seajs/sea.js" ></script>
+	<script src="__JS__/libs/config.js"></script>
+	<link rel="shortcut icon" href="__PUBLIC__/imgs/common/favicon.ico"/>
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		window.onload = function(){
+			var isIE6= /msie 6/i.test(navigator.userAgent.toLowerCase());
+			var isIE7= /msie 7/i.test(navigator.userAgent.toLowerCase());
+			var isWebkit = /webkit/.test(navigator.userAgent.toLowerCase());
+			var winHeight = window.document.body.offsetHeight;
+			if( !isIE6 || !isIE7 || isWebkit ){
+				winHeight = winHeight+10;
+			}
+			parent.document.getElementById("iframe_content").height = winHeight;
+		};
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<if condition="$menu">
+			<div class="row omg-right">
+				<div class="col-md-12" >
+					<div class="panel panel-default" >
+						<!-- Nav tabs -->
+						<ul class="nav nav-pills">
+							<foreach name="menu" item="v">
+								<li id="{$key}"><a href="{:U(MODULE_NAME.'/'.$key)}" >{$v}</a></li>
+							</foreach>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row omg-right">
-			<div class="col-md-12" >
-				<div id="content" >
-					{__CONTENT__}
+			</if>
+			<div class="row omg-right">
+				<div class="col-md-12" >
+						{__CONTENT__}
 				</div>
 			</div>
+			<!--right end-->
 		</div>
-
-		<!--right end-->
-	</div>
-</div><!--row end-->
+	</div><!--row end-->
+</div>
 <script>
-	seajs.use(['$'],function($){
-		$("#{$Think.const.ACTION_NAME}").addClass('active');
-		$('.nav-pills').find('a').click(function(){
-			$('#right-start').load($(this).attr('data-url'))
-		})
+	seajs.use(['$','bootstrap','bootstrap-css'],function($){
+		$("#{$Think.const.ACTION_NAME}").addClass('active ').find('a').removeAttr('href');
 	})
 </script>
+<link   href="__CSS__/admin.css" rel="stylesheet">
+</body>
+</html>

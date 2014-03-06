@@ -1,11 +1,3 @@
-body {
-  padding-top: 60px;
-}
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
 .container {
   width: 100% !important;
 }
@@ -73,4 +65,7 @@ body {
 .nav-pills > li > a {
   color: #333;
   border-radius: 4px;
+}
+.table a {
+  color: #333333;
 }
