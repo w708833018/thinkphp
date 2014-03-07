@@ -70,13 +70,6 @@
 </div>
 </div>
 <!--container end-->
-<script>
-	seajs.use(['$','bootstrap','bootstrap-css'],function($){
-		$('.list-group').find('a').click(function(){
-			$('#right-start').find('#iframe_content').attr('src',$(this).attr('data-url'));
-		})
-	})
-</script>
 <script type="text/javascript">
 	window.onload = function() {
 		var right = document.getElementById("right-start");
