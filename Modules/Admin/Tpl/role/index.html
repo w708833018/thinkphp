@@ -17,6 +17,7 @@
 							<td ><eq name="v.status" value="1">激活<else/>禁用</eq></td>
 							<td><a href="{:U('Role/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
 								<a href="{:U('Role/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+								<a href="{:U('Role/access','id='.$v[id])}" title="配置权限"><span class="glyphicon glyphicon-cog"></span></a>
 							</td>
 						</tr>
 					</foreach>

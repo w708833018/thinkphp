@@ -1,0 +1,49 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-6">
+		<form  action="{:U('Role/'.ACTION_NAME)}" method="post" id="ajaxForm">
+			<input type="hidden" name="id" value="{$role_id}"/>
+			<foreach name="nodeList" item="v">
+				<div class="panel panel-default" style="padding: 0">
+					<div class="panel-heading" >
+						<input type="checkbox" name="access[]" value="{$v.id}_{$v.level}"  level="app">
+						<strong>{$v.title}</strong>
+					</div>
+					<div class="panel-body" style="padding-left: 30px">
+						<foreach name="v.child" item="t">
+							<div>
+								<p><input type="checkbox" name="access[]" value="{$t.id}_{$t.level}"  level="action"> {$t.title}</p>
+								<foreach name="t.child" item="vo">
+									<div >
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<label class="checkbox-inline">
+											<input type="checkbox" name="access[]" value="{$vo.id}_{$vo.level}"  level="method"> <code>{$vo.title}</code>
+										</label>
+									</div>
+								</foreach>
+							</div>
+							<hr>
+						</foreach>
+					</div>
+				</div>
+			</foreach>
+			<button type="submit" class="btn btn-primary pull-right">
+				保存配置
+			</button>
+		</form>
+	</div>
+<script>
+	seajs.use(['$'],function($){
+		$('input[level=app]').change(function(){
+			var action = $(this).parents('div.panel').find('input[level=action]');
+			$(this).is(':checked') ? action.prop('checked',true) : action.prop('checked',false);
+			action.trigger('change');
+		})
+		$('input[level=action]').change(function(){
+			var method = $(this).parent('p').siblings('div').find('input[level=method]');
+			$(this).is(':checked') ? method.prop('checked',true) : method.prop('checked',false);
+		})
+	})
+</script>
+</div>
+
