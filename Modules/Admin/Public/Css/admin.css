@@ -69,3 +69,6 @@
 .table a {
   color: #333333;
 }
+.help-block label {
+  font-weight: normal;
+}

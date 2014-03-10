@@ -2,27 +2,22 @@
  * Created by Administrator on 14-2-21.
  */
 define(function(require){
-		require('hideshow');
-		require('equalHeight');
-		require('tablesorter');
+
+	require('form-ajax');
+
+	//form Ajax submit
 	$(function(){
-		$(".tablesorter").tablesorter();
-		//When page loads...
-		$(".tab_content").hide(); //Hide all content
-		$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-		$(".tab_content:first").show(); //Show first tab content
-
-		//On Click Event
-		$("ul.tabs li").click(function() {
-
-			$("ul.tabs li").removeClass("active"); //Remove any "active" class
-			$(this).addClass("active"); //Add "active" class to selected tab
-			$(".tab_content").hide(); //Hide all tab content
-
-			var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-			$(activeTab).fadeIn(); //Fade in the active ID content
-			return false;
-		});
-		$('.column').equalHeight();
+		var ajaxFrom = $('#ajaxForm');
+		ajaxFrom.ajaxForm({
+			dataType:'json',
+			success:function(data){
+				alert(data.message);
+				if(data.success && data.referer){
+					window.location.href = data.referer;
+				}
+			}
+		})
 	})
+
+
 });

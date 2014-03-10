@@ -39,11 +39,8 @@ class RoleAction extends AdminAction {
 	 */
 	public function add(){
 		if(I('post.')){
-			if(!I('name'))$this->ajaxReturn(array('message'=>'请填写角色名称'));
-			if(!I('remark')) $this->ajaxReturn(array('message'=>'请填写角色别名'));
-			if($this->role->add(I('post.'))){
-				$this->ajaxReturn(array('success'=>1,'message'=>'添加成功'));
-			};
+			$this->role->add(I('post.'));
+			$this->ajaxReturn(array('success'=>1,'message'=>'添加成功','referer'=>U('Role/index')));
 		}else{
 			$this->display();
 		}
@@ -56,7 +53,7 @@ class RoleAction extends AdminAction {
 		I('id') or $this->error('请选择要删除的角色');
 		if(I('post.')){
 			$this->role->save(I('post.'));
-			$this->ajaxReturn(array('success'=>1,'message'=>'修改成功'));
+			$this->ajaxReturn(array('success'=>1,'message'=>'修改成功','referer'=>U('Role/index')));
 		}else{
 			$item = $this->role->find(I('id'));
 			$this->menu = array_merge($this->menu,array('edit'=>'修改角色'));

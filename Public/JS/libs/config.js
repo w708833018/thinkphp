@@ -9,9 +9,12 @@ var alias={
 	'tags': "JS/libs/util/tags",
 	'tags-css': "JS/libs/util/tags.css",
 
-	//jquery extend
+	//jquery extend validate
 	'validate':'JS/libs/jQueryValidate/jquery-validate',
 	'validate-min':'JS/libs/jQueryValidate/jquery-validate.min',
+
+
+	'form-ajax':'JS/libs/jquery-form/jquery-form',
 	'easyui':'JS/libs/easyui/jquery.easyui.min',
 	'easyui-css':'JS/libs/easyui/themes/metro/easyui.css',
 	'bootstrap':'JS/libs/bootstrap-3.0.3/dist/js/bootstrap.min',

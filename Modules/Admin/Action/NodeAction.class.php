@@ -34,11 +34,8 @@ class NodeAction extends AdminAction{
 			$levPid = explode('_',$data['levPid']);
 			$data['level'] = $levPid[0]+1;
 			$data['pid']   = $levPid[1];
-			if(M('node')->add($data)){
-				$this->ajaxReturn(array('success'=>1,'message'=>'添加成功'));
-			}else{
-				$this->ajaxReturn(array('success'=>0,'message'=>'添加失败'));
-			}
+			M('node')->add($data);
+			$this->ajaxReturn(array('success'=>1,'message'=>'添加成功','referer'=>U('Node/index')));
 		}else{
 			$nodeList = M('node')->where('level <= 2')->field('title,id,pid,level')->select();
 			$this->nodeList = node_merge($nodeList);
@@ -53,11 +50,8 @@ class NodeAction extends AdminAction{
 			$levPid = explode('_',$data['levPid']);
 			$data['level'] = $levPid[0]+1;
 			$data['pid']   = $levPid[1];
-			if(M('node')->save($data)){
-				$this->ajaxReturn(array('success'=>1,'message'=>'修改成功'));
-			}else{
-				$this->ajaxReturn(array('success'=>0,'message'=>'修改失败'));
-			};
+			M('node')->save($data);
+			$this->ajaxReturn(array('success'=>1,'message'=>'修改成功','referer'=>U('Node/index')));
 		}else{
 			$nodeList = M('node')->where('level <= 2')->field('title,id,pid,level')->select();
 			$this->nodeList = node_merge($nodeList);
