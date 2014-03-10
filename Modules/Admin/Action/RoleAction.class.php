@@ -94,7 +94,7 @@ class RoleAction extends AdminAction {
 			$nodeList = M('node')->field('title,id,pid,level')->select();
 			$this->nodeList = node_merge($nodeList);
 			$this->role_id = I('id');
-			$this->$nodeIds = M('access')->where(array('role_id'=>I('id')))->getField('node_id',true);
+			$this->nodeIds = M('access')->where(array('role_id'=>I('id')))->getField('node_id',true);
  			$this->menu = array_merge($this->menu,array('access'=>'配置权限'));
 			$this->assign('menu',$this->menu);
 			$this->display();
