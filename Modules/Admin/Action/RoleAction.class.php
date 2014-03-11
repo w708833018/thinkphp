@@ -6,11 +6,9 @@ class RoleAction extends AdminAction {
 
 	private $role;
 
-	private $menu;
-
 	public function _init(){
+		parent::_init();
 		$this->menu = self::menu();
-		$this->assign('menu',$this->menu);
 		$this->role = M('role');
 	}
 
@@ -29,8 +27,7 @@ class RoleAction extends AdminAction {
 	 * 角色列表
 	 */
 	public function index(){
-		$list = $this->role->select();
-		$this->assign('list',$list);
+		$this->list = $this->role->select();
 		$this->display();
 	}
 
@@ -55,10 +52,9 @@ class RoleAction extends AdminAction {
 			$this->role->save(I('post.'));
 			$this->ajaxReturn(array('success'=>1,'message'=>'修改成功','referer'=>U('Role/index')));
 		}else{
-			$item = $this->role->find(I('id'));
+			$this->item = $this->role->find(I('id'));
 			$this->menu = array_merge($this->menu,array('edit'=>'修改角色'));
-			$this->assign('menu',$this->menu);
-			$this->assign('item',$item)->display('add');
+			$this->display('add');
 		}
 	}
 
@@ -96,7 +92,6 @@ class RoleAction extends AdminAction {
 			$this->role_id = I('id');
 			$this->nodeIds = M('access')->where(array('role_id'=>I('id')))->getField('node_id',true);
  			$this->menu = array_merge($this->menu,array('access'=>'配置权限'));
-			$this->assign('menu',$this->menu);
 			$this->display();
 		}
 	}

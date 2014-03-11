@@ -7,6 +7,7 @@
 class NodeAction extends AdminAction{
 
 	public function _init(){
+		parent::_init();
 		$this->menu = self::menu();
 		$this->assign('menu',$this->menu);
 	}

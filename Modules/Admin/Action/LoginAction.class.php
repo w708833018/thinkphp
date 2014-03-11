@@ -8,7 +8,7 @@ class LoginAction extends BaseAction {
 
 	public  function login(){
 		if(!I('post.')) _404('此页面不存在');
-		$user=M('user')->getByUsername(I('username'));
+		$user = M('user')->getByUsername(I('username'));
 		if( !$user['username'] || $user['password'] !== md5(I('password'))){
 				$this->error('用户名或密码错误');
 		}
@@ -23,6 +23,16 @@ class LoginAction extends BaseAction {
 		session('username',$user['username']);
 		session('logintime',$user['logintime']);
 		session('loginip',$user['loginip']);
+
+		//超级管理员识别
+		if($user['username'] == C('RBAC_SUPERADMIN')){
+			session(C('ADMIN_AUTH_KEY'),true);
+		}
+
+		//读取用户权限
+		import('ORG.Util.RBAC');
+		RBAC::saveAccessList();
+
 		$this->redirect('Index/index');
 
 	}

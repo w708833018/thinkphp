@@ -1,0 +1,39 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-10">
+		<div class="panel panel-default">
+			<div class="container" style="padding-top: 25px">
+				<table class="table table-hover" >
+					<tr>
+						<th>ID</th>
+						<th>用户名</th>
+						<th>登录时间</th>
+						<th>登录IP</th>
+						<th>所属角色</th>
+						<th>操作</th>
+					</tr>
+					<foreach name="list" item="v">
+						<tr>
+							<td>{$v.userid}</td>
+							<td>{$v.username}</td>
+							<td>{:date('m-d H:i:s',$v['logintime'])}</td>
+							<td>{$v.loginip}</td>
+							<td>
+								<foreach name="v.role" item="t">
+									{$t.name} [{$t.remark}]
+								</foreach>
+							</td>
+							<td><a href="{:U('User/edit','id='.$v[userid])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+								<a href="{:U('User/delete','id='.$v[userid])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+							</td>
+						</tr>
+					</foreach>
+				</table>
+			</div>
+			<div class="panel-footer">
+				<button type="button" class="btn btn-default">批量删除</button>
+			</div>
+		</div>
+	</div>
+</div>
+

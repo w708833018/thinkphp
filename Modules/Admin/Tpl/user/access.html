@@ -47,17 +47,7 @@
 		})
 		$('input[level=action]').change(function(){
 			var method = $(this).parent('p').siblings('div').find('input[level=method]');
-			var app = $(this).parents('div.panel-body').siblings('div.panel-heading').find('input[level=app]');
-			if($(this).is(':checked')) app.prop('checked',true);
 			$(this).is(':checked') ? method.prop('checked',true) : method.prop('checked',false);
-		})
-		$('input[level=method]').change(function(){
-			var action = $(this).parents('div').siblings('p').find('input[level=action]');
-			var app = action.parents('div.panel-body').siblings('div.panel-heading').find('input[level=app]');
-			if($(this).is(':checked')) {
-				action.prop('checked',true);
-				app.prop('checked',true);
-			}
 		})
 	})
 </script>
