@@ -6,17 +6,19 @@
 				<table class="table table-hover" >
 					<tr>
 						<th>等级</th>
-						<th>节点名称</th>
-						<th>节点描述</th>
+						<th>菜单名称</th>
+						<th>菜单链接</th>
 						<th>状态</th>
+						<th>打开方式</th>
 						<th>操作</th>
 					</tr>
 					<foreach name="list" item="v">
 						<tr >
 							<td>应用</td>
 							<td>{$v.name}</td>
-							<td>{$v.title}</td>
+							<td>{$v.url}</td>
 							<td ><eq name="v.status" value="1">开启<else/>关闭</eq></td>
+							<td ><eq name="v.target" value="1">新窗口<else/>当前窗口</eq></td>
 							<td><a href="{:U('Node/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
 								<a href="{:U('Node/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
@@ -52,3 +54,4 @@
 		</div>
 	</div>
 </div>
+
