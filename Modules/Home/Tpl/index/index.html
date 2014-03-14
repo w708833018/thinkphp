@@ -1,15 +1,57 @@
-<include file="Public:header" />
-<include file="left" />
-<!--右侧 start-->
-<div class="g-right" id="g-right">
-</div>
-<!--右侧 end-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$site[seo_title]}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="{$site[seo_keyword]}"/>
+	<meta name="description" content="{$site[seo_description]}"/>
+	<!-- Bootstrap -->
+	<script src="__JS__/global.js" ></script>
+	<script src="__JS__/libs/seajs/sea.js" ></script>
+	<script src="__JS__/libs/config.js"></script>
+	<link rel="shortcut icon" href="__PUBLIC__/imgs/common/favicon.ico"/>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		body{
+			padding-top: 60px;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse  navbar-fixed-top ">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="">OMGTokyo</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="javascript:void(0)">PHP</a></li>
+			<li><a href="javascript:void(0)">Jquery</a></li>
+			<li><a href="javascript:void(0)">Thinkphp</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="#" role="search">
+			<div class="form-group">
+				<div class="input-group">
+					<input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+          <span class="input-group-btn">
+            <button type="submit" class="btn"><span class="fui-search"></span></button>
+          </span>
+				</div>
+			</div>
+		</form>
+	</div>
+</nav>
 <script>
-	seajs.use(['$'],function(){
-		$('#g-right').load("{:U('Index/listPage')}");
-		$('.use').click(function(){
-			$('#g-right').load("{:U('Index/listPage')}",'tag='+$(this).text());
+	seajs.use(['$','bootstrap','bootstrap-css','flat-ui','flat-ui-css'],function($){
+		$('ul.navbar-nav').find('li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active')
 		})
 	})
 </script>
-<include file="Public:footer" />
+
+</body>
+</html>

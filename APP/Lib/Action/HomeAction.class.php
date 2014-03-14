@@ -7,7 +7,6 @@
 class HomeAction extends  BaseAction{
 
 	public function  _init(){
-		var_dump(1111111111111);
 	}
 
 } 
