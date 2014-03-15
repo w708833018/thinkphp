@@ -19,32 +19,10 @@
 							<td>{$v.url}</td>
 							<td ><eq name="v.status" value="1">开启<else/>关闭</eq></td>
 							<td ><eq name="v.target" value="1">新窗口<else/>当前窗口</eq></td>
-							<td><a href="{:U('Node/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-								<a href="{:U('Node/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+							<td><a href="{:U(MODULE_NAME.'/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+								<a href="{:U(MODULE_NAME.'/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
 						</tr>
-						<foreach name="v.child" item="t">
-							<tr>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;控制器</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.name}</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.title}</td>
-								<td ><eq name="t.status" value="1">开启<else/>关闭</eq></td>
-								<td><a href="{:U('Node/edit','id='.$t[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-									<a href="{:U('Node/delete','id='.$t[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
-								</td>
-							</tr>
-							<foreach name="t.child" item="vo">
-								<tr>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;&nbsp;&nbsp;方法</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.name}</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.title}</td>
-									<td ><eq name="vo.status" value="1">开启<else/>关闭</eq></td>
-									<td><a href="{:U('Node/edit','id='.$vo[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-										<a href="{:U('Node/delete','id='.$vo[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
-									</td>
-								</tr>
-							</foreach>
-						</foreach>
 					</foreach>
 				</table>
 			</div>

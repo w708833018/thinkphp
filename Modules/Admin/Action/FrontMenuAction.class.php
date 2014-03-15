@@ -43,10 +43,24 @@ class FrontMenuAction extends  AdminAction {
 				$this->ajaxReturn(array('success'=>1,'message'=>'添加成功','referer'=>U('FrontMenu/index')));
 			};
 		}else{
+			$list = M('menu')->field('id,name,parent_id')->where(array('cate'=>1))->select();
+			$tree = new Tree();
+			$tree->icon = array('│', '├─ ', '└─ ');
+			$tree->init($list);
+			$str = "<option value=\$id >\$spacer\$name</option>";
+			$this->list = $tree->get_tree(0,$str);
 			$this->display();
 		}
 
 	}
 
+	/**
+	 * 删除菜单
+	 */
+	public function delete(){
+		I('id') or $this->error('请选择菜单');
+		M('menu')->where(array('id|parent_id'=>I('id')))->delete();
+		$this->redirect('index');
+	}
 
 } 

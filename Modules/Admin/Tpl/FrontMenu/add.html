@@ -11,16 +11,9 @@
 						<div class="form-group">
 							<label class="control-label col-md-2" >上级菜单</label>
 							<div class="col-md-4">
-								<select class="form-control" name="pid">
+								<select class="form-control" name="parent_id">
 									<option value="0">作为主菜单</option>
-									<foreach name="nodeList" item="v">
-										<option value="{$v.level}_{$v.id}" <if condition="$item[pid] eq $v[id]">selected</if> >
-										{$v.title}</option>
-										<foreach name="v.child" item="t">
-											<option value="{$t.level}_{$t.id}" <if condition="$item[pid] eq $t[id]">selected</if> >
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├&nbsp;{$t.title}</option>
-										</foreach>
-									</foreach>
+									{$list}
 								</select>
 							</div>
 						</div>
