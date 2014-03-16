@@ -67,6 +67,12 @@ class Category {
 		return $arr;
 	}
 
+	/**
+	 * 组合成二维数组
+	 * @param     $cate
+	 * @param int $pid
+	 * @return array
+	 */
 	static function cate_merge($cate,$pid=0){
 		$arr = array();
 		foreach($cate as $v){
