@@ -2,33 +2,24 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">
+			<form action="{:U(MODULE_NAME.'/sort')}" method="post" >
 			<div class="container" style="padding-top: 25px">
 				<table class="table table-hover" >
 					<tr>
-						<th>等级</th>
+						<th>排序</th>
 						<th>菜单名称</th>
 						<th>菜单链接</th>
 						<th>状态</th>
 						<th>打开方式</th>
 						<th>操作</th>
 					</tr>
-					<foreach name="list" item="v">
-						<tr >
-							<td>应用</td>
-							<td>{$v.name}</td>
-							<td>{$v.url}</td>
-							<td ><eq name="v.status" value="1">开启<else/>关闭</eq></td>
-							<td ><eq name="v.target" value="1">新窗口<else/>当前窗口</eq></td>
-							<td><a href="{:U(MODULE_NAME.'/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-								<a href="{:U(MODULE_NAME.'/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
-							</td>
-						</tr>
-					</foreach>
+					{$list}
 				</table>
 			</div>
 			<div class="panel-footer">
-				<button type="button" class="btn btn-default">批量删除</button>
+				<button type="submit" class="btn btn-default">排序</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

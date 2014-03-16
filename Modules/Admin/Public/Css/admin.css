@@ -16,6 +16,20 @@
 .navbar-inverse .navbar-nav > li > a {
   color: #ffffff;
 }
+.input,
+textarea,
+select {
+  padding: 4px 4px;
+  font-size: 100%;
+  line-height: 18px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #f0f0f0 inset;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin: 0;
+  font-family: inherit;
+}
 /*pane-group style start*/
 .omg-panel-group .panel-group .panel {
   margin-bottom: 0;
