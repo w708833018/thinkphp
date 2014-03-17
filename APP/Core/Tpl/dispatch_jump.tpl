@@ -22,19 +22,21 @@
 </head>
 <body>
 <div class="container">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading"><strong>提示信息</strong></div>
-				<div class="panel-body" >
-					<present name="message">
-						<?php echo($message); ?>
-						<else/>
-						<?php echo($error); ?>
-					</present>
-				</div>
-				<div class="panel-footer" style="color: #666">
-					<small>页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b></small>
+	<div class="row  ">
+		<div class="container">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><strong>提示信息</strong></div>
+					<div class="panel-body" >
+						<present name="message">
+							<p class="text-success"><?php echo($message); ?></p>
+							<else/>
+							<p class="text-danger"><?php echo($error); ?></p>
+						</present>
+					</div>
+					<div class="panel-footer" style="color: #666">
+						<small>页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b></small>
+					</div>
 				</div>
 			</div>
 		</div>
