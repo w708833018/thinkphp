@@ -1,0 +1,54 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="container" style="padding-top: 25px">
+				<table class="table table-hover" >
+					<tr>
+						<th>等级</th>
+						<th>节点名称</th>
+						<th>节点描述</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+					<foreach name="list" item="v">
+						<tr >
+							<td>应用</td>
+							<td>{$v.name}</td>
+							<td>{$v.title}</td>
+							<td ><eq name="v.status" value="1">开启<else/>关闭</eq></td>
+							<td><a href="{:U('Node/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+								<a href="{:U('Node/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+							</td>
+						</tr>
+						<foreach name="v.child" item="t">
+							<tr>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;控制器</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.name}</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.title}</td>
+								<td ><eq name="t.status" value="1">开启<else/>关闭</eq></td>
+								<td><a href="{:U('Node/edit','id='.$t[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+									<a href="{:U('Node/delete','id='.$t[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+								</td>
+							</tr>
+							<foreach name="t.child" item="vo">
+								<tr>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;&nbsp;&nbsp;方法</td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.name}</td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.title}</td>
+									<td ><eq name="vo.status" value="1">开启<else/>关闭</eq></td>
+									<td><a href="{:U('Node/edit','id='.$vo[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+										<a href="{:U('Node/delete','id='.$vo[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+									</td>
+								</tr>
+							</foreach>
+						</foreach>
+					</foreach>
+				</table>
+			</div>
+			<div class="panel-footer">
+				<button type="button" class="btn btn-default">批量删除</button>
+			</div>
+		</div>
+	</div>
+</div>

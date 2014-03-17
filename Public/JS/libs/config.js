@@ -29,7 +29,12 @@ var alias={
 	'jquery-ui':'JS/libs/bootstrap-3.0.3/Flat-UI/js/jquery-ui-1.10.3.custom.min',
 	'application':'JS/libs/bootstrap-3.0.3/Flat-UI/js/application',
 	'bootstrap-select':'JS/libs/bootstrap-3.0.3/Flat-UI/js/bootstrap-select',
-	'bootstrap-switch':'JS/libs/bootstrap-3.0.3/Flat-UI/js/bootstrap-switch'
+	'bootstrap-switch':'JS/libs/bootstrap-3.0.3/Flat-UI/js/bootstrap-switch',
+
+	//Ueditor
+	'ueditor':'JS/libs/ueditor/ueditor.all.min',
+	'ueditor-config':'JS/libs/ueditor/ueditor.config',
+	'ueditor-cn':'JS/libs/ueditor/lang/zh-cn/zh-cn'
 };
 
 for (var a in alias) {
