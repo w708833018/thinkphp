@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$site[seo_title]}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="{$site[seo_keyword]}"/>
+	<meta name="description" content="{$site[seo_description]}"/>
+	<!-- Bootstrap -->
+	<script src="__JS__/global.js" ></script>
+	<script src="__JS__/libs/seajs/sea.js" ></script>
+	<script src="__JS__/libs/config.js"></script>
+	<link rel="shortcut icon" href="__PUBLIC__/imgs/common/favicon.ico"/>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+	<script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		body{
+			padding-top: 70px;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse  navbar-fixed-top ">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="">OMGTokyo</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="javascript:void(0)">Home</a></li>
+			<foreach name="menu" item="v">
+				<if condition="empty($v[child])">
+					<li ><a href="javascript:void(0)">{$v.name}</a></li>
+					<else/>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{$v.name}
+							<b class="caret"></b></a>
+						<span class="dropdown-arrow"></span>
+						<ul class="dropdown-menu">
+							<foreach name="v.child" item="t">
+								<li><a href="">{$t.name}</a></li>
+							</foreach>
+						</ul>
+					</li>
+				</if>
+			</foreach>
+		</ul>
+		<form class="navbar-form navbar-right" action="#" role="search">
+			<div class="form-group">
+				<div class="input-group">
+					<input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+          <span class="input-group-btn">
+            <button type="submit" class="btn"><span class="fui-search"></span></button>
+          </span>
+				</div>
+			</div>
+		</form>
+	</div><!--collapse end-->
+</nav><!--nav end-->
+<!--content start-->
+{__CONTENT__}
+<!--content end-->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-7">
+				<h3 class="footer-title">Subscribe</h3>
+			</div> <!-- /col-xs-7 -->
+		</div>
+	</div>
+</footer>
+<script>
+	seajs.use(['$','bootstrap','bootstrap-css','flat-ui','flat-ui-css'],function($){
+		$('ul.navbar-nav').find('li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active')
+		})
+	})
+</script>
+</body>
+</html>

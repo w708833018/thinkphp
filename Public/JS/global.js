@@ -1,4 +1,4 @@
-var test = test || {};
-test.domain={
+var site = site || {};
+site.domain={
 	'public':'http://www.thinkphp.net/Public/'
 };

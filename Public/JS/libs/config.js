@@ -1,5 +1,5 @@
 
-test.seajsBase = test.domain.public;
+site.seajsBase = site.domain.public;
 var alias={
 	'login' : "JS/login",
 	'admin' : "JS/admin",
@@ -33,7 +33,7 @@ var alias={
 };
 
 for (var a in alias) {
-	alias[a] = test.seajsBase + alias[a];
+	alias[a] = site.seajsBase + alias[a];
 }
 
 seajs.config({
