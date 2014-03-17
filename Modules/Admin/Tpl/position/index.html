@@ -1,0 +1,27 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-default">
+			<div class="container" style="padding-top: 25px">
+				<table class="table table-hover" >
+					<tr>
+						<th>所属分类</th>
+						<th>推荐位名称</th>
+						<th>操作</th>
+					</tr>
+					<foreach name="list" item="v">
+						<tr>
+							<td>{$v.cate_name}</td>
+							<td>{$v.name}</td>
+							<td>
+								<a href="{:U(MODULE_NAME.'/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+								<a href="{:U(MODULE_NAME.'/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+							</td>
+						</tr>
+					</foreach>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+

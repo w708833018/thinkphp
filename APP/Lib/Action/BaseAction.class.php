@@ -14,6 +14,7 @@ class BaseAction  extends  Action{
 			$setting[$v['item_key']] = $v['item_value'];
 		}
 		$this->assign('site',$setting);
+		$this->pre = C('DB_PREFIX');
 		if(method_exists($this,'_init'))
 			$this->_init();
 	}
