@@ -1,0 +1,24 @@
+<layout name="Public/common"/>
+<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-default">
+			<form action="{:U(MODULE_NAME.'/sort')}" method="post" >
+			<div class="container" style="padding-top: 25px">
+				<table class="table table-hover" >
+					<tr>
+						<th>排序</th>
+						<th>级别</th>
+						<th>分类名称</th>
+						<th>操作</th>
+					</tr>
+					{$list}
+				</table>
+			</div>
+			<div class="panel-footer">
+				<button type="submit" class="btn btn-default">排序</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
