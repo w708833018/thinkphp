@@ -32,9 +32,8 @@ var alias={
 	'bootstrap-switch':'JS/libs/bootstrap-3.0.3/Flat-UI/js/bootstrap-switch',
 
 	//Ueditor
-	'ueditor':'JS/libs/ueditor/ueditor.all.min',
-	'ueditor-config':'JS/libs/ueditor/ueditor.config',
-	'ueditor-cn':'JS/libs/ueditor/lang/zh-cn/zh-cn'
+	 ue: 'JS/libs/ueditor/ueditor.all.min',
+	'ue-config':'JS/libs/ueditor/ueditor.config.js'
 };
 
 for (var a in alias) {

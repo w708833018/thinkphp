@@ -35,8 +35,8 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-2" >内容</label>
-							<div class="col-md-10">
-								<textarea name="" id="content"  ></textarea>
+							<div class="col-md-10" style="padding-right: 25px">
+								<script id="container" name="content" type="text/plain"></script>
 							</div>
 							<div class="has-error">
 								<span class="help-block"></span>
@@ -89,12 +89,9 @@
 		});
 	})
 </script>
-<script type="text/javascript">
-window.UEDITOR_HOME_URL = '__ROOT__/Public/JS/libs/ueditor/';
-	window.onload=function(){
-		window.UEDITOR_CONFIG.initialFrameHeight = 500;
-		UE.getEditor('content');
-	};
+<script>
+	seajs.use(['ue'],function(ue){
+		UEDITOR_CONFIG.initialFrameHeight = 600;
+		ue.getEditor('container');
+	})
 </script>
-<js file="__ROOT__/Public/JS/libs/ueditor/ueditor.config.js"/>
-<js file="__ROOT__/Public/JS/libs/ueditor/ueditor.all.min.js"/>
