@@ -9,7 +9,7 @@
 					<div class="tab-pane active" id="site_info">
 						<h1 class="text-hide">form-start</h1>
 						<div class="form-group">
-							<label class="control-label col-md-2" >所属分类</label>
+							<label class="control-label col-md-1" >分类</label>
 							<div class="col-md-3">
 								<select class="form-control" name="catid">
 									<option value="0_0">未分类</option>
@@ -25,7 +25,7 @@
 							</div>
 						</div>
 						<div class="form-group ">
-							<label class="control-label col-md-2" >标题</label>
+							<label class="control-label col-md-1" >标题</label>
 							<div class="col-md-6">
 								<input class="form-control"  type="text" name="name"   value="{$item[name]}"   />
 							</div>
@@ -34,32 +34,12 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label col-md-2" >内容</label>
-							<div class="col-md-10" style="padding-right: 25px">
+							<label class="control-label col-md-1" >内容</label>
+							<div class="col-md-11" style="padding-right: 25px">
 								<script id="container" name="content" type="text/plain"></script>
 							</div>
 							<div class="has-error">
 								<span class="help-block"></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-md-2" >状态</label>
-							<div class="col-md-5">
-								<eq name="Think.const.ACTION_NAME" value="edit">
-									<label class="radio-inline">
-										<input type="radio"  value="1" name="status" <eq name="item[status]" value="1">checked="checked"</eq> > 开启
-									</label>
-									<label class="radio-inline">
-										<input type="radio"  value="2" name="status" <eq name="item[status]" value="2">checked="checked"</eq>> 关闭
-									</label>
-									<else/>
-									<label class="radio-inline">
-										<input type="radio"  value="1" name="status" checked="checked" > 开启
-									</label>
-									<label class="radio-inline">
-										<input type="radio"  value="2" name="status"> 关闭
-									</label>
-								</eq>
 							</div>
 						</div>
 						<h1 class="text-hide">form-end</h1>
@@ -92,6 +72,9 @@
 <script>
 	seajs.use(['ue'],function(ue){
 		UEDITOR_CONFIG.initialFrameHeight = 600;
+		UEDITOR_CONFIG.imageUrl  = "{:U('Index/imgUpload',array(cate_name=>'article'))}";
+		UEDITOR_CONFIG.savePath  = ['upload'];
+		UEDITOR_CONFIG.imagePath = "{:C('UPLOAD_URL')}";
 		ue.getEditor('container');
 	})
 </script>
