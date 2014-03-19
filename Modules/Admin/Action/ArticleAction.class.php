@@ -23,20 +23,28 @@ class ArticleAction extends AdminAction {
 	}
 
 	public function index(){
-
 		$this->display();
 	}
 
 	public function add(){
 		if(I('post.')){
-			$data = I('post.');
-			$levPid = explode('_',$data['levPid']);
-			$data['level'] = $levPid[0]+1;
-			$data['pid']   = $levPid[1];
-			M('node')->add($data);
+			D('ArticleRelation')->create();
+			if($article_id = D('ArticleRelation')->add()){
+				if(isset($_POST['position']) && !empty($_POST['position'])){
+					foreach($_POST['position'] as $v){
+						M('article_position')->add(array('article_id'=>$article_id,'position_id'=>$v));
+					}
+				}
+			}
 			$this->ajaxReturn(array('success'=>1,'message'=>'添加成功','referer'=>U('Node/index')));
 		}else{
-
+			$list = M('category')->field('id,name,parent_id')->order('sort')->where(array('cate'=>1))->select();
+			$tree = new Tree();
+			$tree->icon = array('│', '├─ ', '└─ ');
+			$tree->init($list);
+			$str = "<option value=\$id >\$spacer\$name</option>";
+			$this->cate = $tree->get_tree(6,$str);
+			$this->position = M('position')->where(array('catid'=>array(array('eq',6),array('eq',0), 'or')))->select();
 			$this->display();
 		}
 
