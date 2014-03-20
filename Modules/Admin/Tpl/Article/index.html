@@ -1,54 +1,54 @@
 <layout name="Public/common"/>
 <div class="row">
 	<div class="col-md-12">
+		<form action="" method="post" id="pub-form">
+			<input type="hidden" name="status" value="{$status}"/>
 		<div class="panel panel-default">
 			<div class="container" style="padding-top: 25px">
 				<table class="table table-hover" >
 					<tr>
-						<th>等级</th>
-						<th>节点名称</th>
-						<th>节点描述</th>
-						<th>状态</th>
+						<th><input type="checkbox" id="checkAll" /></th>
+						<th>ID</th>
+						<th>分类</th>
+						<th style="width: 400px">标题</th>
+						<th>点击量</th>
+						<th>更新时间</th>
 						<th>操作</th>
 					</tr>
 					<foreach name="list" item="v">
-						<tr >
-							<td>应用</td>
-							<td>{$v.name}</td>
-							<td>{$v.title}</td>
-							<td ><eq name="v.status" value="1">开启<else/>关闭</eq></td>
-							<td><a href="{:U('Node/edit','id='.$v[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-								<a href="{:U('Node/delete','id='.$v[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
+						<tr>
+							<td><input type="checkbox" name="id[]" value="{$v.id}"/></td>
+							<td>{$v.id}</td>
+							<td>{$v.catename}</td>
+							<td>{$v.title} <if condition="!empty($v[position])"><img src="__IMG__/small_elite.gif"></if></td>
+							<td>{$v.hits}</td>
+							<td title="{:date('H:i:s',$v[edittime])}">{:date('Y-m-d',$v[edittime])}</td>
+							<td>
+								<a href="{:U(MODULE_NAME.'/edit',array('id'=>$v[id],'action'=>ACTION_NAME))}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
+								<a href="{:U(MODULE_NAME.'/delete',array('id'=>$v[id],'status'=>$v[status]))}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
 						</tr>
-						<foreach name="v.child" item="t">
-							<tr>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;控制器</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.name}</td>
-								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$t.title}</td>
-								<td ><eq name="t.status" value="1">开启<else/>关闭</eq></td>
-								<td><a href="{:U('Node/edit','id='.$t[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-									<a href="{:U('Node/delete','id='.$t[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
-								</td>
-							</tr>
-							<foreach name="t.child" item="vo">
-								<tr>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;&nbsp;&nbsp;方法</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.name}</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─&nbsp;&nbsp;{$vo.title}</td>
-									<td ><eq name="vo.status" value="1">开启<else/>关闭</eq></td>
-									<td><a href="{:U('Node/edit','id='.$vo[id])}" title="修改"><span class="glyphicon glyphicon-file"></span></a>
-										<a href="{:U('Node/delete','id='.$vo[id])}" onclick="return confirm('确定要删除吗？')" title="删除"><span class="glyphicon glyphicon-trash"></span></a>
-									</td>
-								</tr>
-							</foreach>
-						</foreach>
 					</foreach>
 				</table>
 			</div>
 			<div class="panel-footer">
-				<button type="button" class="btn btn-default">批量删除</button>
+					<button type="button" class="btn btn-default sub" data-action="{:U(MODULE_NAME.'/delete')}"><if condition="ACTION_NAME eq 'recyle'">批量删除<else/>回收站</if></button>
+					<if condition="ACTION_NAME eq 'recyle'"><button type="button" class="btn btn-default sub" data-action="{:U(MODULE_NAME.'/restore')}">还原</button></if>
 			</div>
 		</div>
+	</form>
 	</div>
+	<script>
+		seajs.use(['$'],function(){
+			$('#checkAll').click(function(){
+				var child = $(this).parents('tr').siblings('tr').find('input[type=checkbox]');
+				$(this).is(':checked') ? child.prop('checked',true) : child.prop('checked',false);
+			});
+			$('button.sub').click(function(){
+				 if(confirm('是否要执行此操作？')){
+					 $('#pub-form').attr('action',$(this).attr('data-action')).submit();
+				 }
+			})
+		})
+	</script>
 </div>
