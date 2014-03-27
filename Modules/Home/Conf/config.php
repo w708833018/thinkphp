@@ -8,5 +8,8 @@
 		),
 		'URL_MODEL'                => 1,
 		'URL_HTML_SUFFIX'          => '',
+	    'APP_AUTOLOAD_PATH'        => '@.TagLib',
+	    'TAGLIB_BUILD_IN'          => 'Cx,Use'
+
  );
 ?>
