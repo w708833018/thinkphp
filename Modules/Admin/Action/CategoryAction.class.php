@@ -27,6 +27,7 @@ class CategoryAction extends  AdminAction {
 		$tree->init($arr);
 		$str = "<tr>
 					<td ><input type='text' size='3' value='\$sort' class='input' name='\$id'></td>
+					<td>\$id</td>
 					<td>\$level</td>
 					<td>\$spacer\$name</td>
 					<td>\$str_manger</td>

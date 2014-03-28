@@ -8,7 +8,7 @@ class IndexAction extends HomeAction {
 	}
 
 	public function index(){
-		A('Article')->index();
+		$this->display('Public::common');
 	}
 
 }

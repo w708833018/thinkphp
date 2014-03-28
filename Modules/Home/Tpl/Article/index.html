@@ -1,127 +1,22 @@
-<layout name="Public/common"/>
 <div class="container">
 	<div class="row">
 		<div class="col-md-7 col-md-offset-1" >
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="{:U('Article/show')}" >ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
+			<foreach name="list" item="v">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<small><a href="{:U('Article/show')}" >{$v.title}</a></small>
+						<small class="pull-right">{:date('Y-m-d',$v[addtime])}</small>
+					</div>
+					<div class="panel-body">
+						<small >
+							{$v.introduce}
+						</small>
+					</div>
+					<div class="panel-footer text-right">
+						<a href="" target="_blank"><small>more >></small></a>
+					</div>
 				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<small><a href="" target="_blank">ThinkPHP 学习笔记(一)</a></small>
-					<small class="pull-right">2014-03-12</small>
-				</div>
-				<div class="panel-body">
-					<small >
-						ThinkPHP的模型对象实例本身也是一个数据对象，所以属性的访问就显得非常直观和简单
-						，可以支持对象和数组两种方式来访问数据属性，例如下面的方式采用数据对象的方式来访问User模型的属性
-					</small>
-				</div>
-				<div class="panel-footer text-right">
-					<a href="" target="_blank"><small>more >></small></a>
-				</div>
-			</div>
+			</foreach>
 		</div><!--col-md-6 end-->
 		<div class="col-md-4" >
 			<div class="row">

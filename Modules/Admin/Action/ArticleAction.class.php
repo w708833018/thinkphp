@@ -31,6 +31,8 @@ class ArticleAction extends AdminAction {
 
 	public function add(){
 		if(I('post.')){
+			Load('extend');
+			$_POST['introduce'] = $_POST['introduce'] ? $_POST['introduce'] : intro($_POST['content']);
 			D('ArticleRelation')->create();
 			if($article_id = D('ArticleRelation')->add()){
 				if(isset($_POST['position']) && !empty($_POST['position'])){
@@ -55,6 +57,8 @@ class ArticleAction extends AdminAction {
 
 	public function edit(){
 		if(I('post.')){
+			Load('extend');
+			$_POST['introduce'] = $_POST['introduce'] ? $_POST['introduce'] : intro($_POST['content']);
 			D('ArticleRelation')->create();
 			if(D('ArticleRelation')->save()){
 				if(isset($_POST['position']) && !empty($_POST['position'])){
@@ -114,7 +118,7 @@ class ArticleAction extends AdminAction {
 	public function delete(){
 		I('id') or $this->error('请选择文章');
 		$id = I('post.') ? $_POST['id'] : I('id');
-	    D('ArticleRelation')->del($id,I('status'));
+		D('ArticleRelation')->del($id,I('status'));
 		$this->success('操作成功');
 	}
 
