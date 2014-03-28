@@ -67,7 +67,7 @@
 </nav><!--nav end-->
 <!--content start-->
 <div id="content">
-	{__CONTENT__}
+
 </div>
 <!--content end-->
 <footer>
@@ -81,6 +81,7 @@
 </footer>
 <script>
 	seajs.use(['$','bootstrap','bootstrap-css','flat-ui','flat-ui-css'],function($){
+		$('#content').load($('#home').attr('data-url'));
 		$('ul.navbar-nav').find('li').click(function(){
 			$(this).addClass('active').siblings().removeClass('active');
 			$('#content').load($(this).find('a').attr('data-url'));

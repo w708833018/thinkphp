@@ -4,7 +4,7 @@
 			<foreach name="list" item="v">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<small><a href="{:U('Article/show')}" >{$v.title}</a></small>
+						<small><a href="{:U('Article/show','id='.$v[id])}" target="_blank">{$v.title}</a></small>
 						<small class="pull-right">{:date('Y-m-d',$v[addtime])}</small>
 					</div>
 					<div class="panel-body">
@@ -13,7 +13,7 @@
 						</small>
 					</div>
 					<div class="panel-footer text-right">
-						<a href="" target="_blank"><small>more >></small></a>
+						<a href="{:U('Article/show','id='.$v[id])}" target="_blank"><small>more >></small></a>
 					</div>
 				</div>
 			</foreach>
