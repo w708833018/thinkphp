@@ -1,20 +1,26 @@
 <layout name="Public/common"/>
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-1" >
+		<div class="col-md-7 col-md-offset-1" >
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<small><a >{$item[title]}</a></small>
 					<small class="pull-right">{$item[addtime]|date='Y-m-d',###}</small>
 				</div>
-				<div class="panel-body">
-					<small >
-						{$item[content]}
-					</small>
+				<div class="panel-body" id="contents">
+						<iframe id="iframe_content"  src="{:U('Article/content','id='.$item['id'])}"  style="width:100%;" frameborder="0"  onload="this.height=this.contentWindow.document.documentElement.scrollHeight"></iframe>
 				</div>
 				<div class="panel-footer text-right">
 				</div>
 			</div>
 		</div><!--col-md-6 end-->
+		<div class="col-md-4" >
+			<div class="list-group" >
+				<a href="javascript:void(0)" class="list-group-item ">相关文章</a>
+				<article catid="$item[catid]" limit="10" order="edittime desc">
+					<a href="{:U('Article/show','id='.$id)}" class="list-group-item" ><small>{$title}</small></a>
+				</article>
+			</div>
+		</div>
 	</div><!--row end-->
 </div><!--container end-->

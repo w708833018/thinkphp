@@ -3,7 +3,6 @@
  * User: Administrator
  * Time: 14-3-19 下午4:08
  */
-
 class ArticleRelationModel  extends  RelationModel{
 
 	protected $tableName = 'article';
@@ -32,7 +31,7 @@ class ArticleRelationModel  extends  RelationModel{
 	);
 
 	public function getList($status = 3){
-		return $this->field('content',true)->relation(true)->where(array('status'=>$status))->select();
+		return $this->field('content',true)->relation(true)->where(array('status'=>$status))->order('edittime desc')->select();
 	}
 
 	/**

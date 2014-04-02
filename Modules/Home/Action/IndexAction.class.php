@@ -8,7 +8,7 @@ class IndexAction extends HomeAction {
 	}
 
 	public function index(){
-		$this->display();
+		A('Article')->index();
 	}
 
 }

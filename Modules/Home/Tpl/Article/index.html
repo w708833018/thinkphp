@@ -1,3 +1,4 @@
+<layout name="Public/common"/>
 <div class="container">
 	<div class="row">
 		<div class="col-md-7 col-md-offset-1" >
@@ -17,21 +18,16 @@
 					</div>
 				</div>
 			</foreach>
+			<center>{$page}</center>
 		</div><!--col-md-6 end-->
 		<div class="col-md-4" >
 			<div class="row">
 				<div class="col-md-12">
 					<div class="list-group" >
-						<a href="javascript:void(0)" class="list-group-item ">
-							推荐文章
-						</a>
-						<a href="#" class="list-group-item"><small>为网页设计师准备的10个在线的HTML5设计工具</small></a>
-						<a href="#" class="list-group-item"><small>设计师带来苹果官方网站扁平化概念设计</small></a>
-						<a href="#" class="list-group-item"><small>游戏网站jQuery无缝滚动列表</small></a>
-						<a href="#" class="list-group-item"><small>将excel中的数据导入数据库</small></a>
-						<a href="#" class="list-group-item"><small>MySQL优化的奇技淫巧之STRAIGHT_JOIN</small></a>
-						<a href="#" class="list-group-item"><small>Spruce + UHF RFID 构建 Ethernet 接口通讯</small></a>
-						<a href="#" class="list-group-item"><small>Hive 内建操作符与函数开发——深入浅出学Hive</small></a>
+						<a href="javascript:void(0)" class="list-group-item ">推荐文章</a>
+						<article position="3" limit="10" order="edittime desc">
+							<a href="{:U('Article/show','id='.$id)}" class="list-group-item" target="_blank"><small>{$title}</small></a>
+						</article>
 					</div>
 				</div>
 			</div>

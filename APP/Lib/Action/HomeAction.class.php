@@ -7,7 +7,7 @@
 class HomeAction extends  BaseAction{
 
 	public function  _init(){
-
+		$this->menuName =  I('menu');
 	}
 
 } 
